@@ -1,0 +1,21 @@
+package pack.repository;
+
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.stereotype.Repository;
+
+import pack.model.entity.Product;
+
+@Repository
+@EnableJpaRepositories
+@EntityScan(basePackages = "pack.model.entity.Product")
+public interface ProductRepository extends JpaRepository<Product, Integer> {
+
+	@Query("SELECT  FROM Product p WHERE p.product_id = ?1")
+	Product findByProduct_id(Integer product_id);
+
+
+}

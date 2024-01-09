@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- 기타 헤더 정보 -->
+</head>
+<body>
+
+<!-- 상품 정보 표 등을 포함한 HTML 코드 -->
+<!-- ... -->
+
+<!-- 스크립트 코드를 포함 -->
+<script th:inline="javascript">
+    /* 여기에 JavaScript 코드를 붙여넣기 */
+    // 모달 창 열기
+    function openPurchaseModal(productId, productName, productCapacity, productPrice) {
+        var modal = document.getElementById("purchaseModal");
+        document.getElementById("productId").value = productId;
+        document.getElementById("productName").textContent = productName;
+        document.getElementById("productCapacity").textContent = productCapacity;
+        document.getElementById("productPrice").textContent = productPrice;
+        modal.style.display = "block";
+    }
+
+    // 모달 창 닫기
+    function closePurchaseModal() {
+        var modal = document.getElementById("purchaseModal");
+        modal.style.display = "none";
+    }
+
+    // 상품 구매 처리
+    function purchaseProduct() {
+        var quantity = document.getElementById("quantity").value;
+        // 수량을 서버로 전송하거나 다른 작업을 수행할 수 있음
+        alert("구매 처리됨. 수량: " + quantity);
+        closePurchaseModal();
+        return false; // 폼의 기본 동작 방지
+    }
+</script>
+
+<!-- ... -->
+</body>
+</html>

@@ -1,0 +1,5 @@
+package pack.model.order;
+
+public class Order {
+
+}

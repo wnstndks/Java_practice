@@ -1,0 +1,19 @@
+package pack.repository;
+
+
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.stereotype.Repository;
+
+import pack.model.Product;
+
+@Repository
+@EnableJpaRepositories
+public interface ProductRepository extends JpaRepository<Product, Integer> {
+
+	@Query("SELECT  FROM Product p WHERE p.product_id = ?1")
+	Product findByProduct_id(Integer product_id);
+
+
+}

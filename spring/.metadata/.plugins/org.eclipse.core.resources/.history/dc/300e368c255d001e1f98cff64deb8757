@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>상품 목록</title>
+</head>
+<body>
+
+	<table border="1">
+		<tr>
+			<th>상품 이미지</th>
+			<th>상품 이름</th>
+			<th>브랜드</th>
+			<th>상품가격</th>
+			<th>담은 상품수</th>
+			<th>결제가격</th>
+		</tr>
+		<tr th:each="cartItem : ${cartItems}">
+			<td> <img th:src="@{upload/}+${cartItem.product.pimage}" height="100" width="100" /> </td>
+			<td th:text="${cartItem.product.model}"></td>
+			<td th:text="${cartItem.product.brand}"></td>
+			<td th:text="${cartItem.product.price}"></td>
+			<td>
+			<td>
+				<input type="number" th:value="${cartItem.cartCount}" th:min="${cartItem.cartCount}" name="orderCount">
+			</td>
+
+			</td>
+
+			<td th:text="${cartItem.calculateSubtotal()}"></td>
+			<td>
+				<form action="/addToOrderItemFromCart" method="post">
+					<input type="hidden" name="productId" th:value="${cartItem.product.productId}" />
+					<input type="number" id="cartCount-${cartItem.cartProductId}" name="quantity"
+						th:min="${cartItem.product.stockQuantity}" th:value="${cartItem.cartCount}"
+						style="display:none" />
+					<input type="submit" value="구매하기" />
+				</form>
+			</td>
+		</tr>
+	</table>
+
+	</table>
+</body>
+
+</html>

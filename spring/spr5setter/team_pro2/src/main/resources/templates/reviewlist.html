@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>리뷰 목록</title>
+</head>
+<body>
+* 리뷰 목록 *
+<br>
+    <table border="1">
+        <tr>
+            <th>상품id</th>
+            <th>별점</th>
+            <th>등록일</th>
+            <th>상세보기</th>
+        </tr>
+        <tr th:if="${list.size() > 0}" th:each="data : ${list}">
+			<td th:text="${data.product_id}"></td>
+			<span th:utext="${'&#9733;' * data.rating}"></span>
+			<td th:text="${data.review_date}"></td>
+            <td>
+                <a th:href="@{/showreview(review_id=${data.review_id},page=${page})}" th:text="상세보기"></a>
+            </td>
+        </tr>
+        <!-- paging -->
+        <tr style="text-align: center;">
+            <td colspan="5">
+                <span th:each="num : ${#numbers.sequence(1, pagesu)}">
+    <span th:if="${num == page}">
+        <b th:text="${num}">num 표시(현재 페이지는 링크를 걸지 않음)</b>
+    </span>
+    <span th:if="${num != page}">
+        <a th:href="@{reviewlist(page=${num})}" th:text="${num}">num 표시</a>
+    </span>
+</span>
+            </td>
+    </table>
+    <br>
+    <a th:href="reviewshow">리뷰 보기</a>
+   
+</body>
+</html>

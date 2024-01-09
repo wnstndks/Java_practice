@@ -1,0 +1,17 @@
+package pack.model;
+
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProductCrudRepository extends JpaRepository<ProductDto, Integer>{
+	//num이 자동 증가 처리를 할 경우 아래처럼 코드 작성
+
+/* @Query(value="select max(p.num) from memDto as p")
+	@Query(value="select max(num) from mem", nativeQuery =true)
+	int findByMaxNum();
+	*/
+	
+	@Query(value="select product_id,name,capacity,price,quantity from ProductDto")
+	ProductDto findByNum(Integer product_id);
+	
+}

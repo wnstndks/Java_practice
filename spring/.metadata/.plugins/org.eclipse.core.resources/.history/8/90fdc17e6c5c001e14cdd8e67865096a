@@ -1,0 +1,28 @@
+package pack.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import pack.model.Cart;
+import pack.model.CartItem;
+import pack.repository.CartItemRepository;
+
+@Service
+public class CartItemService {
+
+    @Autowired
+    private CartItemRepository cartItemRepository;
+
+    public CartItem getCartItemByCartAndProduct(Cart cart, Product product) {
+        List<CartItem> cartItems = cartItemRepository.findByCart(cart);
+
+        for (CartItem cartItem : cartItems) {
+            if (cartItem.getProduct().equals(product)) {
+                return cartItem;
+            }
+        }
+
+        return null; // 해당 상품이 장바구니에 없을 경우 null을 반환
+    }
+}
+

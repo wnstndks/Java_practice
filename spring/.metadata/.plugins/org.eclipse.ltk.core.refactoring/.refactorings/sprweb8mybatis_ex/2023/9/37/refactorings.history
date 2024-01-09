@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;pack.model.SangpumDto&apos; to &apos;JikwonDto&apos;&#x0D;&#x0A;- Original project: &apos;sprweb8mybatis_ex&apos;&#x0D;&#x0A;- Original element: &apos;pack.model.SangpumDto&apos;&#x0D;&#x0A;- Renamed element: &apos;pack.model.JikwonDto&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SangpumDto&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;pack.model{SangpumDto.java[SangpumDto" matchStrategy="1" name="JikwonDto" qualified="false" references="true" similarDeclarations="false" stamp="1694415548003" textual="false" version="1.0"/>
+</session>

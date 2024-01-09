@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="msgImpl" class="pack.MessageImpl" scope="singleton"> <!-- prototype, request,session -->
+		
+		<constructor-arg index="1">
+			<value>홍길동</value>
+		</constructor-arg>
+		
+		<!-- 
+		<constructor-arg index="0">
+			<value>홍두깨</value>
+		</constructor-arg>
+		 -->
+		 
+		<constructor-arg index="0" type="java.lang.String" value="홍두깨"/>
+		<constructor-arg index="2" type="int" value="2000"/>
+		<constructor-arg index="3" type="pack.MyInfo" ref="myInfo"/>	 
+	
+	<!-- setter -->
+	<property name="spec">
+		<value>자바 전문 개발자</value>
+	</property>
+	
+	<property name="myInfo">
+		<ref bean="myInfo"/>
+	</property>
+	<property name="inter">
+		<ref bean="outDataImpl"/>
+	</property>
+	
+	
+	</bean>
+	
+	<bean id="myInfo" name="aa,bb" class="pack.MyInfo" scope="singleton"/>
+	<bean id="outDataImpl" class="etc.OutDataImpl">
+		<property name="filePath" value="c:/work/sprtest.txt"/>
+	</bean>
+	
+</beans>

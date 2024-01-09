@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>찜 내역</title>
+</head>
+
+<body>
+	<h1>찜목록</h1>
+	<table border="1" align="center">
+		<tr>
+			<th>모델 이미지</th>
+			<th>모델명</th>
+		</tr>
+		<tr th:each="jjim : ${jjims}">
+			<td> <img th:src="@{upload/}+${jjim.pimage}" /> </td>
+			<td th:text="${jjim.name}"></td>
+			<a th:href="@{/deletejjim(jjim_id=${jjim.jjim_id})}" alt="Output Image">
+				<input type="button" value="구매하기">
+			</a>
+		</tr>
+	</table>
+</body>
+
+</html>

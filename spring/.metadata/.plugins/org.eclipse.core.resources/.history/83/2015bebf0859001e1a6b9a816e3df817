@@ -1,0 +1,24 @@
+package pack.service;
+
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class OrderService {
+/*
+    private OrderRepository orderRepository;
+
+    public void saveOrderToDatabase(String name, String color,String capacity,int quantity, int total) {
+        Order order = new Order();
+        order.setName(name);
+        order.setColor(color);
+        order.setCapactity(capacity);
+        order.setQuantity(quantity);
+        order.setTotal(total);
+
+        orderRepository.save(order);
+    }
+*/
+}

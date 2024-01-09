@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>상품 목록</title>
+</head>
+
+<body>
+	<!-- 고객님~ 마음껏 사주세요 -->
+<h3>상품 목록 보기</h3>
+<div th:if="${plist != null and plist.size() > 0}">
+	<table style="width: 90%; text-align: center;">
+		<tr style="background-color:green">
+			<th>상품명</th><th>용량</th><th>가격</th><th>재고</th>
+		</tr>
+		<tr th:each="p : ${plist}">
+			<td>
+				<img th:src="@{'../upload/' + ${p.image}}" width="100" />
+				<span th:text="${p.name}"></span>
+			</td>
+			<td th:text="${p.price}"></td>
+			<td th:text="${p.stock}"></td>
+			<td>
+				<a th:href="@{javascript:productDetail_g(${p.no})}">보기</a>
+			</td>
+		</tr>
+	</table>
+</div>
+<div th:unless="${plist != null and plist.size() > 0}">
+	<p>상품이 없습니다.</p>
+</div>
+
+<form action="productdetail_g" name="detailFrm" method="post">
+	<input type="hidden" name="no" />
+</form>
+</body>
+
+</html>

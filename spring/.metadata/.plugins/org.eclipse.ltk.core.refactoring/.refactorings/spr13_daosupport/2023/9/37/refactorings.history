@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;sprweb7legacy_db/src/main/java/pack.model&apos;&#x0D;&#x0A;- Original project: &apos;spr13_daosupport&apos;&#x0D;&#x0A;- Destination element: &apos;sprweb7legacy_db/src/main/java/pack.model&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     pack.DataSource.java&#x0D;&#x0A;     pack.SangpumDto.java" description="Copy compilation units" destination="=sprweb7legacy_db/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;pack.model" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;pack{DataSource.java" element2="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;pack{SangpumDto.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1694404739992" units="2" version="1.0"/>
+</session>

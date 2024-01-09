@@ -1,0 +1,40 @@
+package pack.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import pack.model.Order;
+import pack.model.OrderItem;
+import pack.repository.OrderRepository;
+import pack.service.CartService;
+import pack.service.OrderService;
+
+@Controller
+public class OrderController {
+
+	@Autowired
+	private OrderService orderService;
+
+	@Autowired
+	private CartService cartService;
+	
+	@Autowired
+	private OrderRepository orderRepository;
+
+
+	// 주문 상세정보 화면 표시
+	@GetMapping("/orderdetail/{orderId}")
+	public String showOrderDetail(@PathVariable int orderId, Model model) {
+		Order order = orderRepository.getOrderByOrderId(orderId);
+		List<OrderItem> orderItems = orderRepository.findOrderItemsByOrderId(orderId); // 주문 아이템 리스트 가져오기
+		model.addAttribute("order", order);
+		model.addAttribute("orderItems", orderItems); // 주문 아이템 리스트 모델에 추가
+		return "orderdetail";
+	}
+
+}

@@ -1,0 +1,85 @@
+package pack.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import pack.cart.CartService;
+import pack.jjim.JjimRepository;
+import pack.jjim.JjimService;
+
+
+@Controller
+public class ProductController {
+	
+	@Autowired
+	private JjimService jjimService;
+	
+	@Autowired
+	private ProductService productService;
+	
+	@Autowired
+	private CartService cartService;
+
+	@Autowired
+	private ProductRepository productRepository;
+	
+	@Autowired
+    private JjimRepository jjimRepository;
+	
+	//상품리스트 보기
+	@GetMapping("list")
+	public String listProcess(Model model) {
+		ArrayList<Product> list = (ArrayList<Product>) productService.getDataAll(); // jpa를 이용해 자료를 읽게 한 것
+
+		model.addAttribute("datas", list);
+
+		return "list";
+	}
+	
+	//주문내역에 등록하기
+	@GetMapping("/addOrder")
+	public String insertOrder(@RequestParam("product_id") Integer product_id,RedirectAttributes redirectAttributes) {
+	    boolean result = productService.insertOrderFromProduct(product_id);
+    	if (result) {
+    		System.out.println(product_id);
+    	    return "redirect:/list";
+    	} else {
+    	    redirectAttributes.addFlashAttribute("errorMessage", "주문에 실패했습니다.");
+    	    return "redirect:/list";
+    	}
+	}
+	
+	//장바구니에 등록하기
+	@GetMapping("/addCart")
+    public String addCart(@RequestParam("product_id") int product_id,@RequestParam int count, RedirectAttributes redirectAttributes) {
+		 boolean result = cartService.insertCartFromProduct(product_id,count);
+	    	if (result) {
+	    		System.out.println(product_id+"장바구니등록에 성공하였습니다.");
+	    	    return "redirect:/list";
+	    	} else {
+	    	    redirectAttributes.addFlashAttribute("errorMessage", "찜 등록에 실패했습니다.");
+	    	    return "redirect:/list";
+	    	}
+    }
+    
+	//찜등록하기
+	@GetMapping("/addJjim")
+    public String addJjim(@RequestParam("product_id") int product_id, RedirectAttributes redirectAttributes) {
+		 boolean result = productService.insertJjimFromProduct(product_id);
+	    	if (result) {
+	    		System.out.println(product_id+"찜등록에 성공하였습니다.");
+	    	    return "redirect:/list";
+	    	} else {
+	    	    redirectAttributes.addFlashAttribute("errorMessage", "찜 등록에 실패했습니다.");
+	    	    return "redirect:/list";
+	    	}
+    }
+    
+}
+

@@ -1,0 +1,55 @@
+package pack.model;
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale.Category;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import lombok.Data;
+import pack.except.NotEnoughStockException;
+
+@Entity
+@Data
+@Table(name="product")
+public class ProductDto {
+	
+    @Id
+    @Column(name="product_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int product_id;
+    
+    @Column(nullable=false)
+    private String name;
+    private String color; //  색상 정보
+    private String capacity; //  용량 정보
+    private int price;
+    private int stock;
+    
+    //==business logic==//
+
+    /*
+    stock 증가
+    */
+    public void addStock(int quantity) {
+        this.stock += quantity;
+    }
+
+    /*
+    stock 감소
+     */
+    public void removeStock(int quantity){
+        int restStock = this.stock - quantity;
+        if (restStock < 0 ){
+            throw new NotEnoughStockException("need more stock");
+        }
+        this.stock = restStock;
+    }
+ 
+}

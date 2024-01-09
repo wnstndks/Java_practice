@@ -1,0 +1,84 @@
+package pack.controller;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import pack.model.CartItem;
+import pack.model.Order;
+import pack.model.OrderItem;
+import pack.model.Product;
+import pack.repository.OrderRepository;
+import pack.service.CartItemService;
+import pack.service.OrderItemService;
+import pack.service.OrderService;
+import pack.service.ProductService;
+
+@Controller
+public class OrderController {
+
+	@Autowired
+	private ProductService productService;
+	
+	
+	@Autowired
+	private OrderService orderService;
+	
+	@Autowired
+	private OrderItemService orderItemService;
+
+	@Autowired
+	private CartItemService cartItemService;
+
+	@Autowired
+	private OrderRepository orderRepository;
+
+	// 장바구니에서 order로 정보넣기
+    @PostMapping("/orderfromcart")
+    public String orderFromCart(@RequestParam int cartItemId) {
+        // 1. CartItem에서 필요한 정보를 가져오기
+        CartItem cartItem = cartItemService.getCartItemById(cartItemId);
+        Product product = cartItem.getProduct();
+
+        // 2. 장바구니에서 상품 제거
+        cartItemService.removeCartItem(cartItemId);
+
+        // 3. 주문 객체 생성
+        Order order = new Order();
+        order.setOrderStatus("결제완료");
+
+        // 현재 시간을 주문 시간으로 설정합니다.
+        order.setOrderDate(new Date());
+        order = orderService.createOrder(order);
+
+        // 4. 주문 항목 생성
+        OrderItem orderItem = new OrderItem();
+        orderItem.setProduct(product);
+        orderItem.setOrder(order);
+        orderItem.setOrderCount(cartItem.getCartCount());
+        orderItem.setSubtotal(product.getPrice() * cartItem.getCartCount());
+        orderItemService.createOrderItem(orderItem);
+
+        productService.updateStockQuantity(product.getProductId(), cartItem.getCartCount());
+        // 5. 홈페이지로 리다이렉트합니다.
+        return "redirect:/order";
+    }
+
+	// 주문 상세정보 화면 표시
+	@GetMapping("/orderdetail/{orderId}")
+	public String showOrderDetail(@PathVariable int orderId, Model model) {
+		Order order = orderRepository.getOrderByOrderId(orderId);
+		List<OrderItem> orderItems = orderRepository.findOrderItemsByOrderId(orderId); // 주문 아이템 리스트 가져오기
+		model.addAttribute("order", order);
+		model.addAttribute("orderItems", orderItems); // 주문 아이템 리스트 모델에 추가
+		return "orderdetail";
+	}
+
+}

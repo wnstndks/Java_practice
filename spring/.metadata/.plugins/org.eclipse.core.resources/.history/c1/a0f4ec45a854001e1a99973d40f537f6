@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+  table {
+    width: 100%;
+    border: 1px solid #444444;
+  }
+  th, td {
+    border: 1px solid #444444;
+  }
+  /* 모달 창 스타일링 */
+.modal {
+  display: none; /* 초기에는 숨김 */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<h3>상품정보</h3>
+<table>
+	<tr>
+		<th>상품id</th><th>품명</th><th>용량</th><th>가격</th><th>수량</th><th>구매</th>
+	</tr>
+	
+	<th:block th:if="${datas.size>0}">
+		<tr th:each="data:${datas}">
+			<td>[[${data.product_id}]]</td>
+			<td>[[${data.name}]]</td>
+			<td>[[${data.capacity}]]</td>
+			<td>[[${#numbers.formatInteger(data.price,3,'COMMA')}]]</td>		
+			<td>[[${data.quantity}]]</td>
+			
+			<!-- 구매 버튼 -->
+			<td>
+				<button onclick="openPurchaseModal('[[${data.product_id}]]', '[[${data.name}]]', 
+				'[[${data.capacity}]]', '[[${data.price}]]');">
+					구매</button>
+			</td>
+		</tr>
+	</th:block>
+</table>
+	<tr>
+		<td colspan="4">건수 : [[${datas.size}]]</td>	
+	</tr>
+	<tr>
+		<td colspan="4">
+			<form action="/search" method="get">
+				상품명 : <input type="text" name="searchValue">
+				<input type="submit" value="검색"/>
+			</form>
+		</td>
+	</tr>
+</body>
+</html>

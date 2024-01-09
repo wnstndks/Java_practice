@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>상품 목록</title>
+	<script>
+		function showPopup(name, color, capacity, price,stock) {
+			document.getElementById('productName').textContent = name;
+			document.getElementById('productColor').textContent = color;
+			document.getElementById('productCapacity').textContent = capacity;
+			document.getElementById('productPrice').textContent = price;
+			document.getElementById('productStock').textContent = stock;
+			document.getElementById('popup').style.display = 'block';
+		}
+
+		function addToOrderList() {
+			var name = document.getElementById('productName').textContent;
+			var color = document.getElementById('productColor').textContent;
+			var capacity = document.getElementById('productCapacity').textContent;
+			var quantity = document.getElementById('quantity').value;
+			var price = parseInt(document.getElementById('productPrice').textContent);
+			var stock = document.getElementById('productStock').textContent;
+			var total = price * parseInt(quantity);
+
+			var orderRequest = {
+				name: name,
+				color: color,
+				capacity: capacity,
+				quantity: parseInt(quantity),
+				total: total
+			};
+			
+			// AJAX를 이용해 주문 정보를 서버로 전송
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/addOrder");
+			xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+			xhr.onload = function () {
+				if (xhr.status === 200) {
+					alert('주문이 완료되었습니다.');
+					window.location.href = "[[@{/orderlist}]]"; // 주문/배송 처리 페이지로 이동
+				}
+			};
+			xhr.send(JSON.stringify(orderRequest));
+
+    		closePopup();
+		}
+		
+		function addToCartList() {
+			var name = document.getElementById('productName').textContent;
+			var color = document.getElementById('productColor').textContent;
+			var capacity = document.getElementById('productCapacity').textContent;
+			var quantity = document.getElementById('quantity').value;
+			var price = parseInt(document.getElementById('productPrice').textContent);
+			var stock = document.getElementById('productStock').textContent;
+			var total = price * parseInt(quantity);
+
+			var orderRequest = {
+				name: name,
+				color: color,
+				capacity: capacity,
+				quantity: parseInt(quantity),
+				total: total
+			};
+			
+			// AJAX를 이용해 주문 정보를 서버로 전송
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/addCart");
+			xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+			xhr.onload = function () {
+				if (xhr.status === 200) {
+					alert('주문이 완료되었습니다.');
+					window.location.href = "[[@{/addcart}]]"; // 주문/배송 처리 페이지로 이동
+				}
+			};
+			xhr.send(JSON.stringify(orderRequest));
+
+    		closePopup();
+		}
+
+		function closePopup() {
+			document.getElementById('popup').style.display = 'none';
+		}
+
+	</script>
+</head>
+
+<body>
+	<table border="1">
+		<tr>
+			<th>상품명</th>
+			<th>구매하기</th>
+		</tr>
+		<tr th:each="data : ${datas}">
+			<td th:text="${data.name}"></td>
+			<td>
+				<input type="button" value="구매하기" th:attr="onclick='showPopup(\'' + ${data.name} + '\', \'' + ${data.color} + '\', \'' + ${data.capacity} + '\', \'' + ${data.price} + '\',\'' + ${data.stock} + '\')'">
+			</td>
+		</tr>
+	</table>
+	<script src="/script.js"></script>
+	<div id="popup" style="display: none;">
+		<h2>상품 상세 정보</h2>
+		<p>상품명: <span id="productName"></span></p>
+		<p>색상: <span id="productColor"></span></p>
+		<p>용량: <span id="productCapacity"></span></p>
+		<p>가격: <span id="productPrice"></span></p>
+		<p>재고: <span id="productStock"></span></p>
+		<p>수량: <input type="number" id="quantity" min="1"></p>
+		<button onclick="addToOrderList()">바로 결제하기</button>
+		<button onclick="addToCartList()">장바구니에 담기</button>
+		<button onclick="closePopup()">품목으로</button>
+	</div>
+</body>
+
+</html>

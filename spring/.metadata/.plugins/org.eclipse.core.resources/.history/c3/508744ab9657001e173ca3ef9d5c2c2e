@@ -1,0 +1,26 @@
+package pack.model.order;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
+import pack.controller.order.OrderBean;
+
+
+
+public class OrderMappingInterface {
+		// 주문 추가
+		@Insert("INSERT INTO orders (product_id , quantity, customer_id) VALUES (#{product_id}, #{quantity}, #{customer_id})")
+		int addOrder(OrderBean bean);
+	
+		// 카트 목록
+		@Select("select a.Order_id, a.customer_id, a.product_id, b.model, b.brand, b.price, b.pimage from Order a left outer join products b on a.product_id = b.product_id where customer_id = #{customer_id}")
+		List<OrderDto> getOrder(String customer_id);
+		
+		// 카트 확인
+		@Select("select * from orders where customer_id = #{customer_id} and product_id=#{product_id}")
+		OrderDto checkOrder(OrderBean bean);
+}

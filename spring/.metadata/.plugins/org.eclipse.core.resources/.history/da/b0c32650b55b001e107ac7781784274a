@@ -1,0 +1,23 @@
+package pack.member;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CustomerRepository extends JpaRepository<Customer, Integer> {
+	// 닉네임으로 회원 정보 조회(아이디 중복)
+	Optional<Customer> findByCustomerid(String customerid);
+	
+	// 휴대전화로 회원 정보 조회(휴대전화 중복)
+	Optional<Customer> findByPhonenumber(String Phonenumber);
+    
+    // 이름과 휴대전화로 회원 정보 조회 (아이디 찾기)
+	Customer findByCustomernameAndPhonenumber(String customername, String phonenumber);
+	
+    // 닉네임, 이름, 휴대전화로 정보 조회 (비밀번호 찾기)
+	Customer findByCustomeridAndCustomernameAndPhonenumber(String customerid, String customername, String phonenumber);
+   
+    
+}

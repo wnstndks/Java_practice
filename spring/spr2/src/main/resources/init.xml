@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="businessServiceImpl" class="pack.controller.BusinessServiceImpl">
+		<constructor-arg>
+			<!-- 
+			<ref bean="dataDaoImpl"/> , name은 여러개 가능하다
+			 -->
+			 <ref bean="sbs"/> 
+		</constructor-arg>
+	</bean>
+	<bean id="dataDaoImpl" name="kbs,sbs,mbc" class="pack.model.DataDaoImpl"/>
+</beans>

@@ -1,0 +1,30 @@
+package pack.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import pack.model.Product;
+import pack.service.ProductService;
+
+
+@Controller
+public class ProductController {
+	
+	@Autowired
+	private ProductService productservice;
+
+	@GetMapping("list")
+	public String listProcess(Model model) {
+		ArrayList<Product> list = (ArrayList<Product>) productservice.getDataAll(); // jpa를 이용해 자료를 읽게 한 것
+
+		model.addAttribute("datas", list);
+
+		return "list";
+	}
+    
+}
+

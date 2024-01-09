@@ -1,0 +1,27 @@
+package pack.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import pack.model.Order;
+import pack.repository.OrderRepository;
+
+@Controller
+public class OrderController {
+		
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	@GetMapping("orderlist")
+	public String listProcess(Model model) {
+		List<Order> orderlist = (List<Order>) orderRepository.findAllByOrderByOrder_idDesc(); // jpa를 이용해 자료를 읽게 한 것
+
+		model.addAttribute("orders", orderlist);
+
+		return "orderlist";
+	}
+}

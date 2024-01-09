@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>상품 목록</title>
+	</script>
+</head>
+
+<body>
+	<table border="1">
+		<tr>
+			<th>상품리스트</th>
+		</tr>
+		<tr th:each="data : ${datas}">
+			<td th:text="${data.name}"></td>
+			<td th:text="${data.color}"></td>
+			<td th:text="${data.capacity}"></td>
+			<td th:text="${data.price}"></td>
+			<td th:text="${data.stock}"></td>
+			<!-- 이전 코드 ... -->
+
+		<tr th:each="data : ${datas}">
+			<td th:text="${data.name}"></td>
+			<td>
+				<a th:href="@{'/addOrder?id=' + ${data.id}}">
+					<input type="button" value="구매하기">
+				</a>
+			</td>
+		</tr>
+
+		<!-- 이후 코드 ... -->
+
+		</tr>
+	</table>
+	<div id="popup" style="display: none;">
+		<h2>상품 상세 정보</h2>
+		<p>상품명: <span id="productName"></span></p>
+		<p>색상: <span id="productColor"></span></p>
+		<p>용량: <span id="productCapacity"></span></p>
+		<p>가격: <span id="productPrice"></span></p>
+		<p>재고: <span id="productStock"></span></p>
+		<p>수량: <input type="number" id="quantity" min="1"></p>
+		<button onclick="addToOrderList()">바로 결제하기</button>
+		<button onclick="addToCartList()">장바구니에 담기</button>
+		<button onclick="closePopup()">품목으로</button>
+	</div>
+</body>
+
+</html>

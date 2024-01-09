@@ -1,0 +1,44 @@
+package pack.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+import pack.model.Jjim;
+import pack.repository.JjimRepository;
+
+@Service
+@RequiredArgsConstructor
+@Repository
+public class JjimService {
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@Autowired
+	private JjimRepository repository;
+
+	// 전체 자료 읽기
+	public List<Jjim> getDataAll() {
+		List<Jjim> jjimlist = repository.findAll();
+		logger.info("jjims " + jjimlist.size());
+		return jjimlist;
+	}
+
+	@Autowired
+	private JjimRepository jjimRepository;
+
+	public boolean deleteProduct(int jjim_id) {
+		try {
+			jjimRepository.deleteById(jjim_id);
+			return true;
+		} catch (Exception e) {
+			// 예외 처리
+			return false;
+		}
+	}
+}

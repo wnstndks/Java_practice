@@ -1,0 +1,71 @@
+package pack.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import pack.model.Jjim;
+import pack.model.Product;
+import pack.repository.JjimRepository;
+import pack.repository.ProductRepository;
+import pack.service.JjimService;
+import pack.service.ProductService;
+
+
+@Controller
+public class ProductController {
+	
+	@Autowired
+	private JjimService jjimService;
+	
+	@Autowired
+	private ProductService productService;
+
+	@Autowired
+	private ProductRepository productRepository;
+	
+	@Autowired
+    private JjimRepository jjimRepository;
+	
+	@GetMapping("list")
+	public String listProcess(Model model) {
+		ArrayList<Product> list = (ArrayList<Product>) productService.getDataAll(); // jpa를 이용해 자료를 읽게 한 것
+
+		model.addAttribute("datas", list);
+
+		return "list";
+	}
+	
+	@GetMapping("/addOrder")
+	public String insertOrder(@RequestParam("product_id") Integer product_id,RedirectAttributes redirectAttributes) {
+	    boolean result = productService.insertOrderFromProduct(product_id);
+    	if (result) {
+    		System.out.println(product_id);
+    	    return "redirect:/list";
+    	} else {
+    	    redirectAttributes.addFlashAttribute("errorMessage", "상품 삭제에 실패했습니다.");
+    	    return "redirect:/list";
+    	}
+	}
+	
+	
+	
+	@GetMapping("/addJjim")
+    public String addJjim(@RequestParam("product_id") int product_id,RedirectAttributes redirectAttributes) {
+		 boolean result = productService.insertOrderFromProduct(product_id);
+	    	if (result) {
+	    		System.out.println(product_id);
+	    	    return "redirect:/list";
+	    	} else {
+	    	    RedirectAttributes.addFlashAttribute("errorMessage", "상품 삭제에 실패했습니다.");
+	    	    return "redirect:/list";
+	    	}
+    }
+    
+}
+

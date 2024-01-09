@@ -1,0 +1,56 @@
+package pack.model;
+
+import java.time.LocalDateTime;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Entity
+@Table(name = "customer")
+@EntityListeners(AuditingEntityListener.class)
+@Getter
+@Setter
+public class Member {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "customernum")
+	private int customernum;
+
+    private String customerid;
+
+    private String customername;
+
+    private String customernickname;
+
+    private String email;
+
+    private String passwordhash;
+
+    @Column(name = "customergen")
+    private String customergen;
+
+    private String phonenumber;
+
+    private String zipcode;
+
+    private String detailaddress;
+
+    private String address;
+    
+    private boolean active;
+
+    @Column(name = "regdate")
+    private LocalDateTime regdate;
+    
+    
+}

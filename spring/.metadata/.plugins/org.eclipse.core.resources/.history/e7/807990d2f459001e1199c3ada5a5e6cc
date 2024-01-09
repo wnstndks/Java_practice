@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>주문 내역</title>
+</head>
+
+<body>
+	<h1>주문 목록</h1>
+	<table border="1" align="center">
+		<tr>
+			<th>주문 ID</th>
+			<th>상품이미지</th>
+			<th>모델명</th>
+			<th>색상</th>
+			<th>용량</th>
+			<th>수량</th>
+			<th>주문가격</th>
+		</tr>
+		<tr th:each="order : ${orders}">
+			<td th:text="${order.order_id}"></td>
+			<td> <img th:src="@{upload/}+${order.pimage}" /> </td>
+			<td th:text="${order.name}"></td>
+			<td th:text="${order.color}"></td>
+			<td th:text="${order.capacity}"></td>
+			<td th:text="${order.quantity}"></td>
+			<td th:text="${order.total}"> $</td>
+			<td>
+				<a th:href="@{/detailorder(order_id=${order.order_id})}">주문내역 상세조회</a>
+			</td>
+			<td>
+				<a th:href="@{/deleteorder(order_id=${order.order_id})}">결제취소</a>
+			</td>
+		</tr>
+	</table>
+	<table align="center">
+		<td>
+			<a th:href="list">상품목록보기</a>
+		</td>
+		<td>
+			<a th:href="cartlist">장바구니보기</a>
+		</td>
+		<td>
+			<a th:href="jjimlist">찜목록보기</a>
+		</td>
+	</table>
+</body>
+
+</html>

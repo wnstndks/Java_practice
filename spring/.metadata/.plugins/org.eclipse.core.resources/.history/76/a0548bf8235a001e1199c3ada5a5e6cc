@@ -1,0 +1,14 @@
+package pack.repository;
+
+import java.util.List;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import pack.model.Order;
+@ComponentScan(basePackages = {"pack.model"})
+@EnableJpaRepositories(basePackages = {"pack"})
+public interface OrderRepository extends JpaRepository<Order, Integer> {
+	 List<Order> findAllByOrder_idDesc();
+}

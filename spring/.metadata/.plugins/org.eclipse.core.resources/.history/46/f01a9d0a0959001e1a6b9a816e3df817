@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>주문 내역</title>
+</head>
+
+<body>
+    <h1>주문 내역</h1>
+    <table border="1">
+        <tr>
+            <th>주문 ID</th>
+            <th>색상</th>
+            <th>용량</th>
+            <th>수량</th>
+            <th>총가격</th>
+        </tr>
+        <tr th:each="order : ${ordersData}">
+            <td th:text="${order.order_id}"></td>
+            <td th:text="${order.name}"></td>
+            <td th:text="${order.quantity}"></td>
+            <td th:text="${order.total}"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

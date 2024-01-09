@@ -1,0 +1,30 @@
+package pack.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import pack.model.Order;
+import pack.service.OrderService;
+
+@Controller
+@RestController
+public class OrderController {
+		
+	@Autowired
+	private OrderService orderService;
+	
+	
+	@GetMapping("orderlist")
+	public String listProcess(Model model) {
+		ArrayList<Order> orderlist = (ArrayList<Order>) orderService.getDataAll(); // jpa를 이용해 자료를 읽게 한 것
+
+		model.addAttribute("orders", orderlist);
+
+		return "orderlist";
+	}
+}

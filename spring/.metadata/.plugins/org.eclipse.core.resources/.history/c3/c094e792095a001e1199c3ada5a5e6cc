@@ -1,0 +1,58 @@
+package pack.model;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+@Entity
+@Table(name="carts")
+@EntityListeners(AuditingEntityListener.class)
+public class Cart {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int cart_id;
+	
+	@Column(unique=true)
+	private String name;
+	private int count;
+	private int price;
+	private String pimage;
+	
+	@JoinColumn(name="product_id")
+	private int product_id;
+	
+	private int cartPrice;
+	
+	
+	 //생성 메서드//
+    public static Cart createCartItem(Product product, int price, int count) {
+        Cart cart = new Cart();
+        cart.setProduct_id(product_id);
+        cart.setPrice(price);
+        cart.setCount(count);
+
+        product.removeStock(count);
+        return cart;
+    }
+
+    //==business logic==//
+    public void cancel() {
+        getProduct_id().addStock(count);
+    }
+
+    public int getTotalPrice() {
+        return getCartPrice() * getCount();
+    }
+	
+}

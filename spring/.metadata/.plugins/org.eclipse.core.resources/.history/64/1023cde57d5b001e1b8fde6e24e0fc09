@@ -1,0 +1,38 @@
+package pack.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+@Entity
+@Table(name = "carts")
+@EntityListeners(AuditingEntityListener.class)
+public class Cart {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int cartid;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="customers")
+    Customer customer; // 해당 유저의 장바구니
+
+    @OneToMany(mappedBy = "cart")
+    private List<CartProduct> cart_items = new ArrayList<>();
+	
+}

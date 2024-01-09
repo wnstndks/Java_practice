@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\work\sprsou\spr14mybatis\src\main\resources\dbinit.xml"/>
+			<item value="C:\work\sprsou\spr12db_legacy\src\main\java\pack\MainLegacy.java"/>
+			<item value="C:\work\sprsou\spr9aop_basic\src\main\resources\aopinit.xml"/>
+			<item value="C:\work\sprsou\spr7annotation\src\main\java\anno3_etc\Main3.java"/>
+			<item value="C:\work\sprsou\spr4setter\src\main\java\pack\Main.java"/>
+			<item value="C:\work\sprsou\spr3\src\main\java\pack\controller\MyServiceInter.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="aa.bb.cc"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="spr15mybatis_ex"/>
+			<item value="spr14mybatis"/>
+			<item value="spr13_daosupport"/>
+			<item value="spr12db_legacy"/>
+			<item value="spr11aop_ex"/>
+			<item value="spr10aop_anno"/>
+			<item value="spr9aop_basic"/>
+			<item value="spr8bank"/>
+			<item value="spr7annotation"/>
+			<item value="spr6arrange"/>
+			<item value="spr5setter"/>
+			<item value="spr4"/>
+			<item value="spr3"/>
+			<item value="spr2"/>
+			<item value="spr1"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\LG\Downloads\sprweb1\sprweb1"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

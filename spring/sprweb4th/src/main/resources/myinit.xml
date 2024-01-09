@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 방법1: 아주 일반적인 setter -->
+	<bean id="sd" class="pack.setterex.ShowData"/>
+	
+	<!-- <bean id="myProcess" class="pack.setterex.MyProcessService">
+		<property name="nai" value="23"/> setNai를 통해 값 23이 입력: setter injection
+		<property name="name" value="공기밥"/>
+		<property name="showData" ref="sd"/>		
+		
+	</bean>
+	 -->
+	 
+	<!-- 방법2: 아주 일반적인 setter -->
+	<bean id="myProcess" class="pack.setterex.MyProcessService">
+	
+	<property name="nai">
+		<value>23</value>
+	</property>
+	
+	<property name="name">
+		<value>김치국</value>
+	</property>
+	
+	<property name="showData">
+		<bean class="pack.setterex.ShowData"/>
+	</property>
+	</bean>
+</beans>

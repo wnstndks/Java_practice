@@ -1,0 +1,39 @@
+package pack.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import pack.model.Cart;
+import pack.repository.OrderRepository;
+import pack.repository.ProductRepository;
+import pack.service.CartService;
+import pack.service.OrderService;
+
+@Controller
+public class CartController {
+
+	@Autowired
+	private ProductRepository productRepository;
+	
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	@Autowired
+	private OrderService orderservice;
+	
+	@Autowired
+	private CartService cartservice;
+	
+	@GetMapping("cartlist")
+	public String listProcess(Model model) {
+		ArrayList<Cart> cartlist = (ArrayList<Cart>) cartservice.getDataAll(); // jpa를 이용해 자료를 읽게 한 것
+
+		model.addAttribute("carts", cartlist);
+
+		return "cartlist";
+	}
+}

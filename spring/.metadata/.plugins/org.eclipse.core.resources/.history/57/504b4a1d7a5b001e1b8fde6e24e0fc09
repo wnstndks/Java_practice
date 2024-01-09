@@ -1,0 +1,124 @@
+package pack.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+import pack.model.Cart;
+import pack.model.Order;
+import pack.model.Product;
+import pack.repository.CartRepository;
+import pack.repository.OrderRepository;
+import pack.repository.ProductRepository;
+
+@Service
+@RequiredArgsConstructor
+@Repository
+public class CartService {
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@Autowired
+	private CartRepository cartRepository;
+
+	@Autowired
+	private OrderRepository orderRepository;
+
+	@Autowired
+	private ProductRepository productRepository;
+
+	// 전체 자료 읽기
+	public List<Cart> getDataAll() {
+		List<Cart> cartlist = cartRepository.findAll();
+		logger.info("carts " + cartlist.size());
+		return cartlist;
+	}
+
+	public boolean insertCartFromProduct(int product_id, int count) {
+	    try {
+	        // products 테이블로부터 데이터를 가져옵니다.
+	        Product product = productRepository.findById(product_id).orElse(null);
+	        Cart cart = cartRepository.findById(product_id).orElse(null);
+
+	        if (product != null) {
+	            if (cart != null && product.getProduct_id() == cart.getProduct_id()) {
+	                // 중복되는 경우, 수량만 추가합니다.
+	                cart.setCount(cart.getCount() + count);
+	                product.setStock(product.getStock()-count);
+	            } else {
+	                // 중복되지 않는 경우 새로운 카트 아이템을 생성합니다.
+	                Cart newCart = new Cart();
+	                newCart.setName(product.getName());
+	                newCart.setPrice(product.getPrice());
+	                newCart.setPimage(product.getPimage());
+	                newCart.setProduct_id(product_id);
+	                newCart.setCount(count);
+	                
+	                cartRepository.save(newCart);
+	            }
+
+	            return true;
+	        } else {
+	            return false; // product_id에 해당하는 상품이 없는 경우
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false; // 예외 발생 시 실패
+	    }
+	}
+
+
+	// 구매목록에 추가
+	public boolean insertOrderFromCart(int product_id) {
+		try {
+			// carts 테이블로부터 데이터를 가져옵니다.
+			Cart cart = cartRepository.findById(product_id).orElse(null);
+
+			if (cart != null) {
+				Order order = new Order();
+				order.setName(cart.getName());
+				order.setPimage(cart.getPimage());
+				order.setOrdercount(cart.getCount());
+				order.setProduct_id(product_id);
+				orderRepository.save(order);
+				cartRepository.delete(cart);
+				return true;
+
+			} else {
+				return false; // product_id에 해당하는 상품이 없는 경우
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false; // 예외 발생 시 실패
+		}
+	}
+
+	// 장바구니 비우기
+	public boolean deleteProductAll() {
+		try {
+			cartRepository.deleteAllInBatch();
+			return true;
+		} catch (Exception e) {
+			// 예외 처리
+			return false;
+		}
+	}
+
+	// 특정 상품 삭제하기
+
+	public boolean deleteProduct(int cart_id) {
+		try {
+			cartRepository.deleteById(cart_id);
+			return true;
+		} catch (Exception e) {
+			// 예외 처리
+			return false;
+		}
+	}
+
+}

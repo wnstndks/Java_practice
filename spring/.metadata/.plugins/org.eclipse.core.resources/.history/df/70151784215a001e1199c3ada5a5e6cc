@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>주문 내역</title>
+</head>
+
+<body>
+	<h1>주문 목록</h1>
+	<table border="1" align="center">
+		<tr>
+			<th>주문 ID</th>
+			<th>상품이미지</th>
+			<th>모델명</th>
+			<th>주문수량</th>
+			<th>주문가격</th>
+		</tr>
+		<tr th:each="order : ${orders}">
+			<td th:text="${order.order_id}"></td>
+			<td> <img th:src="@{upload/}+${order.pimage}" /> </td>
+			<td th:text="${order.name}"></td>
+			<td th:text="${order.ordercount}"></td>
+			<td th:text="${order.total}"> $</td>
+			<td>
+				<a th:href="@{/detailorder(order_id=${order.order_id})}">
+					<input type="button" value="주문내역상세조회">
+				</a>
+			</td>
+		</tr>
+	</table>
+	<table align="center">
+		<td>
+			<a th:href="list"> <input type="button" value="상품 목록"></a>
+		</td>
+		<td>
+			<a th:href="cartlist"> <input type="button" value="장바구니목록"></a>
+		</td>
+		<td>
+			<a th:href="jjimlist"> <input type="button" value="찜목록"></a>
+		</td>
+	</table>
+</body>
+
+</html>

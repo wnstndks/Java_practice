@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>상품정보</h3>
+	<tr>
+		<th>상품id</th><th>품명</th><th>용량</th><th>가격</th><th>수량</th>
+	</tr>
+	<th:block th:if="${datas.size>0}">
+		<tr th:each="data:${datas}">
+			<td>[[${data.product_id}]]</td>
+			<td>[[${data.name}]]</td>
+			<td>[[${data.capacity}]]</td>
+			<td>[[${#numbers.formatInteger(data.price,3,'COMMA')}]]</td>		
+			<td>[[${data.quantity}]]</td>
+		</tr>
+	</th:block>
+	<tr>
+		<!--
+		<td colspan="4" th:text="${datas.size}">건수</td>
+		-->
+		<td colspan="4">건수 : [[${datas.size}]]</td>	
+	</tr>
+	<tr><!-- 상품명 별 검색 추가 -->
+		<td colspan="4">
+			<form action="/search" method="get">
+				상품명 : <input type="text" name="searchValue">
+				<input type="submit" value="검색"/>
+			</form>
+		</td>
+	</tr>
+</body>
+</html>

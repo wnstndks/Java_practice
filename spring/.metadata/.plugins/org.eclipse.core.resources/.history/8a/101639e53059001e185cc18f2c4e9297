@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+메인 페이지
+<br/>
+<a href="/list">상품정보</a>
+<a href="/orderlist">주문내역정보</a>
+<a href="/cartlist">장바구니정보</a>
+<a href="/jimlist">찜정보</a>
+</body>
+</html>

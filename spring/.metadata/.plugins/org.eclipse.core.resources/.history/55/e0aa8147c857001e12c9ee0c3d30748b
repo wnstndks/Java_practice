@@ -1,0 +1,29 @@
+package pack.model;
+
+
+import lombok.Getter;
+
+import lombok.Setter;
+
+
+@Getter
+@Setter
+public class OrderDto {
+    private int order_id;
+    private String name;
+    private String color;
+    private String capacity;
+    private int quantity;
+    private int total;
+
+    public static OrderDto fromEntity(OrderEntity orderEntity) {
+        OrderDto orderDto = new OrderDto();
+        orderDto.setOrder_id(orderEntity.getOrder_id());
+        orderDto.setName(orderEntity.getName());
+        orderDto.setColor(orderEntity.getColor());
+        orderDto.setCapacity(orderEntity.getCapacity());
+        orderDto.setQuantity(orderEntity.getQuantity());
+        orderDto.setTotal(orderEntity.getTotal());
+        return orderDto;
+    }
+}

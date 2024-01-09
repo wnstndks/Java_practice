@@ -1,0 +1,20 @@
+package pack.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="product")
+public class ProductDto {
+	@Id
+	@Column(name="product_id")
+	private Integer product_id;
+	
+	@Column(nullable=false)
+	private String name,capacity;
+	
+	@Column(nullable=false)
+	private int price,quantity;
+}

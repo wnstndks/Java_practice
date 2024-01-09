@@ -1,0 +1,31 @@
+1695223343870	Rename package 'pack.controller'
+1695230843451	Rename type 'CartDto'
+1695231293993	Rename compilation unit 'CartItemDto.java'
+1695231744647	Rename package 'pack.model.cart'
+1695231827083	Rename package 'CartItemDto'
+1695233346072	Delete element
+1695267833032	Rename resource '927f0685-ecbe-4982-97d2-347218a6b02a.jpg'
+1695267845350	Rename resource '1625396372802642-d866588b-4652-4826-a951-98f6495e406a.jpg'
+1695279456913	Rename type 'Cart'
+1695282700337	Delete element
+1695282712960	Delete element
+1695283158790	Rename type 'CartInsertController'
+1695283497649	Rename type 'CartController'
+1695283510193	Rename package 'pack.controller.cart'
+1695283523490	Rename package 'CartDeleteController'
+1695283540758	Rename type 'CartinsertController'
+1695284187835	Delete element
+1695284193325	Delete element
+1695284835846	Delete elements
+1695284841567	Rename type 'CartListController'
+1695285644727	Rename type 'CartMappingInerface'
+1695288085805	Delete element
+1695293249430	Delete element
+1695293257466	Delete element
+1695293264240	Delete element
+1695297390575	Delete element
+1695313387558	Delete element
+1695313399241	Delete element
+1695382085082	Delete element
+1695382604475	Copy file
+1695396531339	Copy compilation unit

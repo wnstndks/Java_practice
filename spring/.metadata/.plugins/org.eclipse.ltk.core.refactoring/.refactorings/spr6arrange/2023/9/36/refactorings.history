@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spr6arrange/src/main/resources/myinit.xml&apos; to &apos;arrange.xml&apos;" description="Rename resource &apos;myinit.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/myinit.xml" name="arrange.xml" stamp="1693813821651" updateReferences="true"/>
+</session>

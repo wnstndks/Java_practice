@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+main {
+    margin: 0 auto;
+    max-width: 1050px;
+    /* 예시: 최대 너비를 지정할 수 있습니다. */
+}
+
+@media (max-width: 768px) {
+    .usCartPage .usCartTitle {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+}
+
+.usCartPage .usCartTitle {
+    padding-top: 64px;
+    padding-bottom: 32px;
+}
+
+.usCartPage .usCartTitle,
+.usCartPage .usOrderTable {
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    /* 중복 제거 */
+    .usOrderTable .usOrderThead {
+        display: none;
+    }
+}
+
+.usOrderTable .usOrderThead {
+    color: #787a87;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* 중복 제거 */
+
+.usOrderTable .usOrderTr {
+    display: flex;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.usOrderTable .usOrderCol:first-of-type {
+    flex-basis: 36.531%;
+    flex-grow: 0;
+    margin-right: 16px;
+}
+
+/* 중복 제거 */
+
+@media (max-width: 768px) {
+    .usCartPage .usOrderTable .usOrderTbody .usOrderRow:first-of-type {
+        padding-top: 0;
+    }
+}
+
+/* 중복 제거 */
+
+.usOrderRow:last-of-type {
+    margin-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+    .usOrderRow {
+        border-top: none;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 768px) {
+    .usOrderRow>.usOrderTr {
+        display: block;
+    }
+}
+
+/* 중복 제거 */
+
+.usOrderTable .usOrderTr {
+    display: flex;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+/* 중복 제거 */
+
+@media (max-width: 768px) {
+    .usOrderRow .usOrderCol.usOrderTd:nth-of-type(1) {
+        margin-right: 0;
+        margin-bottom: 16px;
+        border-bottom: 1px solid #ecedf1;
+    }
+}
+
+.usOrderTable .usOrderCol:first-of-type {
+    flex-basis: 36.531%;
+    flex-grow: 0;
+    margin-right: 16px;
+}
+
+.usOrderTable .usOrderCol {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .usOrderRow .usOrderCol.usOrderTd:nth-of-type(1) .usItemCardThumbnail {
+        height: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 중복 제거 */
+}
+
+/* 중복 제거 */
+
+/* 나머지 CSS 코드... */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body,
+input,
+textarea {
+    color: #222;
+    font-size: 16px;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    line-height: 1.2;
+}
+
+element.style {
+}
+.usPayPage .usPayBody .usPayInfo .usPayInfoOrder .usPayInfoOrderBody .usItemCardInfo .usItemCardInfoBrandName, .usOrderRow .usOrderCol.usOrderTd:nth-of-type(1) .usItemCardInfo .usItemCardInfoBrandName, .usDialog .usDialogWhiteframe .usDialogItemCard .usDialogItems .usItemCardInfo .usItemCardInfoBrandName {
+    font-size: 13px;
+}
+@media (max-width: 768px){
+.usItemCardInfo .usItemCardInfoBrandName {
+    font-size: 11px;
+}}
+
+.usItemCardInfo .usItemCardInfoBrandName {
+    color: #787a87;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.usPayPage .usPayBody .usPayInfo .usPayInfoOrder .usPayInfoOrderBody .usItemCardInfo .usItemCardInfoName, .usOrderRow .usOrderCol.usOrderTd:nth-of-type(1) .usItemCardInfo .usItemCardInfoName, .usDialog .usDialogWhiteframe .usDialogItemCard .usDialogItems .usItemCardInfo .usItemCardInfoName {
+    font-size: 16px;
+}
+@media (max-width: 768px){
+.usItemCardInfo .usItemCardInfoName {
+    font-size: 13px;
+    line-height: 18px;
+}}
+.usItemCardInfo .usItemCardInfoName {
+    width: 88%;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    word-break: break-all;
+    white-space: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.usPayPage .usPayBody .usPayInfo .usPayInfoOrder .usPayInfoOrderBody .usItemCardInfo .usItemCardInfoCode, .usOrderRow .usOrderCol.usOrderTd:nth-of-type(1) .usItemCardInfo .usItemCardInfoCode, .usDialog .usDialogWhiteframe .usDialogItemCard .usDialogItems .usItemCardInfo .usItemCardInfoCode {
+    font-size: 13px;
+}
+@media (max-width: 768px){
+.usItemCardInfo .usItemCardInfoCode {
+    font-size: 11px;
+}
+.usItemCardInfo .usItemCardInfoCode {
+    font-size: 13px;
+    font-weight: 100;
+    margin-top: 4px;
+    word-break: break-all;
+    white-space: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+}

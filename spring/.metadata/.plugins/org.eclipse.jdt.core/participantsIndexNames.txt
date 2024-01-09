@@ -1,0 +1,25 @@
+INDEX VERSION 1.134
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2742914649.index
+\semiproject\src\main\java
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4185866634.index
+\sprweb3ex\src\main\java
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1469857579.index
+\semiproject\src\main\java
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1978183664.index
+\sprweb3ex\src\main\java
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3435053426.index
+\semiproject\src\main\java
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1246802669.index
+\sprweb2\src\main\java
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\47991399.index
+\sprweb3ex\src\main\java
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1810339264.index
+\sprweb3ex\src\main\java
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1931847784.index
+\semiproject\src\main\java
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1152866876.index
+\sprweb3\src\main\java
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2316364990.index
+\semiproject\src\main\java
+C:\work\sprsou\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\402803209.index
+\spweb2\src\main\java

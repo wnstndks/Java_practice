@@ -1,0 +1,61 @@
+package pack.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+import pack.model.Cart;
+import pack.model.Product;
+import pack.repository.ProductRepository;
+
+@Service
+@RequiredArgsConstructor
+@Repository
+public class JjimService {
+	
+	private Logger logger=LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	private ProductRepository repository;
+	
+	// 전체 자료 읽기
+	public List<Cart> getDataAll(){
+		List<Cart> list=repository.findAll();
+		logger.info("datas "+ list.size());
+		return list;
+	}
+	
+	public String insert(Product product) {
+		//가장 큰 num을 구해 num 자동 증가를 구현한다면
+		//int max=repository.findByMaxNum();
+		//num 중복자료 확인을 통한 등록
+
+		try {
+			//사용자가 입력한 num이 이미 등록되어 있다면 현재 블럭을 정상 수행
+			Product product1=repository.findById(product.getProduct_id()).get();
+			System.out.println("dto : "+product1);
+			return "이미 등록된 번호입니다";
+		} catch (Exception e) {
+			try {
+				//사용자가 입력한 num이 없어서 에러가 발생하는 영역. 회원 등록 수행
+				Product product2 = new Product();
+				product2.setProduct_id(product.getProduct_id());
+				product2.setName(product.getName());
+				product2.setColor(product.getColor());
+				product2.setCapacity(product.getCapacity());
+				product2.setPrice(product.getPrice());
+				product2=repository.save(product); //insert 처리
+				return "success";
+			} catch (Exception e2) {
+				return "입력자료 오류~:"+e2.getMessage();
+			}
+		}
+
+	}
+	
+}

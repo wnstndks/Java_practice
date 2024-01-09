@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+우리가 아는 html이 아니라 타임리프 문서<br/>
+메세지 : <span th:text="${msg}">이 영역의 텍스트는 순수 html에서는 보이나 타임리프 서식(표현식)을 적용하면 무시된다</span>
+<br/>
+메세지(인라인 처리 - text영역에 변수를 기술) : <span>[[${msg2}]]</span>
+<br/>
+값 결합(+를 사용) : <span th:text="'메세지는 ' + ${msg2} + '입니다'"></span>
+<br/>
+값 결합(리터럴 치환 사용) : <span th:text="|메세지는 ${msg2} 입니다|">"|문자열|" 형태 사용</span>
+<br/>
+지역 변수 사용 :
+<span th:with="kor=90,eng=80">
+   <b th:text="|${kor} + ${eng} = ${kor + eng}|">변수는 span tag 내에서만 유효</b>
+</span>
+<br/>
+관계 연산 : <br/>
+<span th:text="3 >= 4"></span> <span th:text="3 < 4"></span>   <br/>
+<span th:text="3 == 4"></span> <span th:text="3 != 4"></span><br/>
+</body>
+<hr/>
+조건 연산 (if,unless) :
+<span th:text="5 > 4?'크구나':'어라 작아여'"></span>
+<br/>
+조건 연산 (true) :
+<span th:if="5 > 4":>
+   <b>조건이 참일 때 수행</b> 
+</span>
+<br/>
+조건 연사 (false) :
+<span th:unless="5 == 4">
+   <b>조건이 거짓말 때 수행</b>
+</span>
+<br/>
+switch 조건 연산 :
+<div th:switch="${msg2}">
+   <b th:case="한국인" th:text="|${msg2}님|"></b>
+   <i th:case="홍길동" th:text="|${msg2}씨|"></i>
+   <strong style="color: red;" th:case="*">모르는 이름이네요</strong>
+</div>
+<hr/>
+DTO 자료 출력 : <br/>
+<span th:text="${sangpum.code}">sangpum.getCode()를 의미</span>
+<span>[[${sangpum.sang}]]</span>
+<span>[[${sangpum.price}]]</span>
+<br/>
+DTO 자료 출력2 :
+<div th:object="${sangpum}">   <!-- 참조 기법 중 th:object 사용도 가능 -->
+   <span th:text="*{code}">자식 요소에서 *{필드겟터}</span>
+   <span th:text="*{sang}"></span>
+   <span th:text="*{['sang']}"></span>
+   <span>[[*{['price']}]]</span> 
+</div>
+<br/>
+<div th:text="${sangpums[0]}"></div>
+<div th:text="${sangpums[1]}"></div>
+컬렉션 반복처리<br/>
+<table border="1">
+   <tr><th>코드</th><th>품명</th><th>가격</th></tr>
+   <tr th:each="s:${sangpums}">
+      <td>[[${s.code}]]</td>
+      <td>[[${s.sang}]]</td>
+      <td>[[${s.price}]]</td>
+      
+      
+      
+   </tr>
+</table>
+</html>

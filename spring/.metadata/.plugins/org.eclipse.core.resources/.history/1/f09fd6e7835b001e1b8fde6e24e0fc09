@@ -1,0 +1,135 @@
+package pack.service;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import pack.model.Cart;
+import pack.model.CartProduct;
+import pack.model.Customer;
+import pack.model.Member;
+import pack.model.Product;
+import pack.repository.CartProductRepository;
+import pack.repository.CartRepository;
+import pack.repository.ProductRepository;
+
+@Service
+@RequiredArgsConstructor
+public class CartService {
+
+    private final CartRepository cartRepository;
+    private final ProductRepository productRepository;
+    private final CartProductRepository CartProductRepository;
+
+
+    // 장바구니 담기
+    @Transactional
+    public void addCart(Customer customer, Product newProduct, int amount) {
+
+        // 유저 id로 해당 유저의 장바구니 찾기
+        Cart cart = cartRepository.findByCustomerId(customer.getCustomerid());
+
+        // 장바구니가 존재하지 않는다면
+        if (cart == null) {
+            cart = Cart.createCart(customer);
+            cartRepository.save(cart);
+        }
+
+        Product product = productRepository.findProductById(newProduct.getProductid());
+        CartProduct cartProduct = CartProductRepository.findByCartIdAndProductId(cart.getCartid(), product.getProductid());
+
+        // 상품이 장바구니에 존재하지 않는다면 카트상품 생성 후 추가
+        if (cartProduct == null) {
+            cartProduct = CartProduct.createCartProduct(cart, product, amount);
+            CartProductRepository.save(cartProduct);
+        }
+
+        // 상품이 장바구니에 이미 존재한다면 수량만 증가
+        else {
+            CartProduct update = cartProduct;
+            update.setCartid(cartProduct.getCartid());
+            update.setProductid(cartProduct.getProductid());
+            update.addCount(amount);
+            update.setCartcount(update.getCartcount());
+            CartProductRepository.save(update);
+        }
+
+        // 카트 상품 총 개수 증가
+        cart.setCartcount(cart.getCartcount()+amount);
+
+    }
+
+    // 유저 id로 해당 유저의 장바구니 찾기
+    public Cart findUserCart(int userId) {
+
+        return cartRepository.findCartByCustomerId(userId);
+
+    }
+
+    // 카트 상품 리스트 중 해당하는 유저가 담은 상품만 반환
+    // 유저의 카트 id와 카트상품의 카트 id가 같아야 함
+    public List<CartProduct> allUserCartView(Cart userCart) {
+
+        // 유저의 카트 id를 꺼냄
+        int userCartId = userCart.getCartid();
+
+        // id에 해당하는 유저가 담은 상품들 넣어둘 곳
+        List<CartProduct> UserCartProducts = new ArrayList<>();
+
+        // 유저 상관 없이 카트에 있는 상품 모두 불러오기
+        List<CartProduct> CartProducts = CartProductRepository.findAll();
+
+        for(CartProduct cartProduct : CartProducts) {
+            if(cartProduct.getCart().getCartid() == userCartId) {
+                UserCartProducts.add(cartProduct);
+            }
+        }
+
+        return UserCartProducts;
+    }
+
+    // 카트 상품 리스트 중 해당하는 상품 id의 상품만 반환
+    public List<CartProduct> findCartProductByItemId(int id) {
+
+        List<CartProduct> cartProducts = CartProductRepository.findCartProductByItemId(id);
+
+        return cartProducts;
+    }
+
+    // 카트 상품 리스트 중 해당하는 상품 id의 상품만 반환
+    public CartProduct findCartProductById(int id) {
+
+        CartProduct cartProduct = CartProductRepository.findCartProductById(id);
+
+        return cartProduct;
+    }
+
+    // 장바구니의 상품 개별 삭제
+    public void CartProductDelete(int id) {
+
+        CartProductRepository.deleteById(id);
+    }
+
+    // 장바구니 아이템 전체 삭제 -> 매개변수는 유저 id
+    public void allCartProductDelete(int id) {
+
+        // 전체 CartProduct 찾기
+        List<CartProduct> cartProducts = CartProductRepository.findAll();
+
+        // 반복문을 이용하여 해당하는 User 의 CartProduct 만 찾아서 삭제
+        for(CartProduct cartProduct : cartProducts){
+
+            if(cartProduct.getCart().getCustomer().getId() == id) {
+
+                cartProduct.getCart().setCartcount(0);
+
+                CartProductRepository.deleteById(cartProduct.getId());
+            }
+        }
+    }
+
+}

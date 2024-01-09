@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev">
+ <select id="selectDataAll" resultType="dto"> <!--  select의 반환값은 list preparestatement를 사용 -->
+  select * from sangdata
+ </select>
+</mapper>

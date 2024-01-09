@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;semiproject/src/main/java/pack.model&apos;&#x0D;&#x0A;- Original project: &apos;login_gugin&apos;&#x0D;&#x0A;- Destination element: &apos;semiproject/src/main/java/pack.model&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     CustomerEntity.java&#x0D;&#x0A;     CustomerRepository.java" description="Copy files" destination="=semiproject/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;pack.model" element1="src/main/java/pack/member/CustomerEntity.java" element2="src/main/java/pack/member/CustomerRepository.java" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1695631741377" units="0" version="1.0"/>
+</session>

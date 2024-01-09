@@ -1,0 +1,13 @@
+package pack.image;
+import net.coobird.thumbnailator.Thumbnails;
+
+public class ResizeImage {	
+
+	File inputFile = new File("input.jpg");
+	File outputFile = new File("output.jpg");
+
+	Thumbnails.of(inputFile)
+	    .size(800, 600)
+	    .outputQuality(0.8)
+	    .toFile(outputFile);
+}

@@ -1,0 +1,45 @@
+package pack.model;
+
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import pack.except.NotEnoughStockException;
+import pack.member.productDto;
+import pack.member.product;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class ProductDto {
+	
+    private int product_id;
+    private String name;
+    private String color; //  색상 정보
+    private String capacity; //  용량 정보
+    private int price;
+    private int stock;
+    
+    public static ProductDto toproductDto(Product product) {
+    	ProductDto productDto = new ProductDto();
+    	productDto.setProduct_id(product.getProduct_id());
+    	productDto.setName(product.getName());
+    	productDto.setColor(product.getColor());
+    	productDto.setCapacity(product.getCapacity());
+    	productDto.setPrice(product.getPrice());
+
+    	return productDto;
+    }
+ 
+}

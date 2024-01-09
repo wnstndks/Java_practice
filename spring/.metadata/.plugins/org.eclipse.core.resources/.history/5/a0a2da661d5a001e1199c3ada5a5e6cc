@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>장바구니 내역</title>
+</head>
+
+<body>
+	<h1>장바구니 내역</h1>
+	<td>
+		<a th:href="@{/deletecartall)}">
+			<input type="button" value="장바구니 비우기">
+		</a>
+	</td>
+	<table border="1" align="center">
+		<tr>
+			<th>장바구니 ID</th>
+			<th>모델 이미지</th>
+			<th>모델명</th>
+			<th>상품가격</th>
+			<th>수량선택하기</th>
+			<th>결제가격</th>
+		</tr>
+		<tr th:each="cart : ${carts}">
+			<td th:text="${cart.cart_id}"></td>
+			<td> <img th:src="@{upload/}+${cart.pimage}" /> </td>
+			<td th:text="${cart.name}"></td>
+			<td th:text="${cart.price}"></td>
+			<td>
+				<a th:href="@{/addOrderFromCart(cart_id=${cart.cart_id})}">
+					<input type="button" value="주문하기">
+				</a>
+			</td>
+			<td>
+				<a th:href="@{/deletecart(cart_id=${cart.cart_id})}">
+					<input type="button" value="장바구니에서 삭제">
+				</a>
+			</td>
+		</tr>
+	</table>
+	<h3 align="center" style="color:red">장바구니 내 상품들의 총 금액합:</h3>
+	<table align="center">
+		<td>
+			<a th:href="list"> <input type="button" value="상품목록"></a>
+		</td>
+		<td>
+			<a th:href="jjimlist"> <input type="button" value="찜목록"></a>
+		</td>
+		<td>
+			<a th:href="orderlist"> <input type="button" value="주문내역보기"></a>
+		</td>
+	</table>
+</body>
+
+</html>

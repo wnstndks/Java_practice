@@ -1,0 +1,1101 @@
+!SESSION 2024-01-05 19:26:29.734 -----------------------------------------------
+eclipse.buildId=4.19.1.202308011926
+java.version=17.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+This is a continuation of log file C:\work\sprsou\.metadata\.bak_2.log
+Created Time: 2024-01-05 19:31:14.699
+
+!ENTRY org.eclipse.egit.ui 4 0 2024-01-05 19:31:14.701
+!MESSAGE Problems encountered while deleting resources.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:784)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:326)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand.lambda$1(RemoveCommand.java:216)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2382)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2407)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand.deleteProjects(RemoveCommand.java:221)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand$1.runInWorkspace(RemoveCommand.java:165)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Could not delete '/shopproject/.git'.
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:367)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:364)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:399)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:856)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1806)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:771)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:326)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand.lambda$1(RemoveCommand.java:216)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2382)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2407)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand.deleteProjects(RemoveCommand.java:221)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand$1.runInWorkspace(RemoveCommand.java:165)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: C:\work\sprsou\shopproject\.git\objects.
+Contains: Could not delete: C:\work\sprsou\shopproject\.git.
+Contains: Could not delete 'C:\work\sprsou\shopproject'.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2024-01-05 19:31:14.701
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2024-01-05 19:31:14.701
+!MESSAGE Could not delete '/shopproject/.git'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:367)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:364)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:399)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:856)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1806)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:771)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:326)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand.lambda$1(RemoveCommand.java:216)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2382)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2407)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand.deleteProjects(RemoveCommand.java:221)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand$1.runInWorkspace(RemoveCommand.java:165)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: C:\work\sprsou\shopproject\.git\objects.
+Contains: Could not delete: C:\work\sprsou\shopproject\.git.
+!SUBENTRY 3 org.eclipse.core.resources 4 273 2024-01-05 19:31:14.701
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2024-01-05 19:31:14.701
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2024-01-05 19:31:14.701
+!MESSAGE Could not delete: C:\work\sprsou\shopproject\.git\objects.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2024-01-05 19:31:14.701
+!MESSAGE Could not delete: C:\work\sprsou\shopproject\.git.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2024-01-05 19:31:14.701
+!MESSAGE Could not delete 'C:\work\sprsou\shopproject'.
+
+!ENTRY org.eclipse.buildship.core 2 0 2024-01-05 19:31:14.832
+!MESSAGE Failed to detect project changes
+!STACK 1
+org.eclipse.core.runtime.CoreException: SynchronizingBuildScriptUpdateListener failed
+	at org.eclipse.buildship.core.internal.workspace.SynchronizingBuildScriptUpdateListener$1.visit(SynchronizingBuildScriptUpdateListener.java:75)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:67)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:51)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizingBuildScriptUpdateListener.visitDelta(SynchronizingBuildScriptUpdateListener.java:68)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizingBuildScriptUpdateListener.resourceChanged(SynchronizingBuildScriptUpdateListener.java:55)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:307)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:297)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:160)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:388)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1516)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.buildship.core.internal.GradlePluginsRuntimeException: Can't read root project location for project located at C:\work\sprsou\shopproject
+	at org.eclipse.buildship.core.internal.configuration.BuildConfigurationPersistence.readPathToRoot(BuildConfigurationPersistence.java:90)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadProjectConfiguration(DefaultConfigurationManager.java:123)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizingBuildScriptUpdateListener.isEnabledInPreferences(SynchronizingBuildScriptUpdateListener.java:63)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizingBuildScriptUpdateListener.doVisitDelta(SynchronizingBuildScriptUpdateListener.java:85)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizingBuildScriptUpdateListener$1.visit(SynchronizingBuildScriptUpdateListener.java:73)
+	... 13 more
+!SUBENTRY 1 org.eclipse.buildship.core 2 0 2024-01-05 19:31:14.832
+!MESSAGE SynchronizingBuildScriptUpdateListener failed
+!STACK 0
+org.eclipse.buildship.core.internal.GradlePluginsRuntimeException: Can't read root project location for project located at C:\work\sprsou\shopproject
+	at org.eclipse.buildship.core.internal.configuration.BuildConfigurationPersistence.readPathToRoot(BuildConfigurationPersistence.java:90)
+	at org.eclipse.buildship.core.internal.configuration.DefaultConfigurationManager.loadProjectConfiguration(DefaultConfigurationManager.java:123)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizingBuildScriptUpdateListener.isEnabledInPreferences(SynchronizingBuildScriptUpdateListener.java:63)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizingBuildScriptUpdateListener.doVisitDelta(SynchronizingBuildScriptUpdateListener.java:85)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizingBuildScriptUpdateListener$1.visit(SynchronizingBuildScriptUpdateListener.java:73)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:67)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:77)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:51)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizingBuildScriptUpdateListener.visitDelta(SynchronizingBuildScriptUpdateListener.java:68)
+	at org.eclipse.buildship.core.internal.workspace.SynchronizingBuildScriptUpdateListener.resourceChanged(SynchronizingBuildScriptUpdateListener.java:55)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:307)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:297)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:160)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:388)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1516)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:50)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.core 4 0 2024-01-05 19:36:28.449
+!MESSAGE An exception occurred during push on URI https://github.com/wnstndks/Java_practice.git: https://github.com/wnstndks/Java_practice.git: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/wnstndks/Java_practice.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:696)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:638)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:541)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:138)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1537)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2024-01-05 19:36:28.453
+!MESSAGE Can't connect to any repository: https://github.com/wnstndks/Java_practice.git (https://github.com/wnstndks/Java_practice.git: not authorized)
+!SESSION 2024-01-05 19:41:54.927 -----------------------------------------------
+eclipse.buildId=4.19.1.202308011926
+java.version=17.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-01-05 19:41:57.225
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2024-01-05 19:42:06.175
+!MESSAGE /css/gef_dark.css
+!STACK 0
+java.io.FileNotFoundException: /css/gef_dark.css
+	at org.eclipse.osgi.storage.url.bundleentry.Handler.findBundleEntry(Handler.java:55)
+	at org.eclipse.osgi.storage.url.BundleResourceHandler.openConnection(BundleResourceHandler.java:182)
+	at java.base/java.net.URL.openConnection(URL.java:1094)
+	at org.eclipse.osgi.storage.url.BundleURLConverter.resolve(BundleURLConverter.java:55)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.resolve(PlatformURLConverter.java:53)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:468)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:436)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:428)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.restore(ThemeEngine.java:624)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.setCSSTheme(PartRenderingEngine.java:1417)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.initializeStyling(PartRenderingEngine.java:1324)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1050)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.jface 2 0 2024-01-05 19:42:06.853
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-01-05 19:42:06.853
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-01-05 19:42:10.358
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\LG'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.058
+!MESSAGE Boot project ADDED: spr1
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.060
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.103
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.104
+!MESSAGE Boot project ADDED: spr10aop_anno
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.105
+!MESSAGE Boot project ADDED: spr11aop_ex
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.106
+!MESSAGE Boot project ADDED: spr12db_legacy
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.107
+!MESSAGE Boot project ADDED: spr13_daosupport
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.109
+!MESSAGE Boot project ADDED: spr14mybatis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.110
+!MESSAGE Boot project ADDED: spr15mybatis_ex
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.111
+!MESSAGE Boot project ADDED: spr2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.112
+!MESSAGE Boot project ADDED: spr3
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.113
+!MESSAGE Boot project ADDED: spr4setter
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.115
+!MESSAGE Boot project ADDED: spr5setter
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.116
+!MESSAGE Boot project ADDED: spr6arrange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.117
+!MESSAGE Boot project ADDED: spr7annotation
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.119
+!MESSAGE Boot project ADDED: spr8bank
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.120
+!MESSAGE Boot project ADDED: spr9aop_basic
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.121
+!MESSAGE Boot project ADDED: sprweb08mybatis_db2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.124
+!MESSAGE Boot project ADDED: sprweb10jikwon_gogek
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.126
+!MESSAGE Boot project ADDED: sprweb11ajax
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.130
+!MESSAGE Boot project ADDED: sprweb12ajax_sangpum
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.132
+!MESSAGE Boot project ADDED: sprweb13ajax_buser
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.136
+!MESSAGE Boot project ADDED: sprweb14aop
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.138
+!MESSAGE Boot project ADDED: sprweb15aop_login
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.141
+!MESSAGE Boot project ADDED: sprweb16fileupload
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.143
+!MESSAGE Boot project ADDED: sprweb17jpa
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.146
+!MESSAGE Boot project ADDED: sprweb18_jpa2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.148
+!MESSAGE Boot project ADDED: sprweb2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.151
+!MESSAGE Boot project ADDED: sprweb3
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.155
+!MESSAGE Boot project ADDED: sprweb3ex
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.159
+!MESSAGE Boot project ADDED: sprweb4th
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.162
+!MESSAGE Boot project ADDED: sprweb5
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.164
+!MESSAGE Boot project ADDED: sprweb6params
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.167
+!MESSAGE Boot project ADDED: sprweb7legacy_db
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.170
+!MESSAGE Boot project ADDED: sprweb8mybatis_db
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.172
+!MESSAGE Boot project ADDED: sprweb8mybatis_ex
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-01-05 19:42:14.174
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\work\sts-4.19.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\javaw.exe
+-cp
+C:\work\sts-4.19.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.48.0.202308011907\servers\spring-boot-language-server\BOOT-INF\classes;C:\work\sts-4.19.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.48.0.202308011907\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Dlsp.completions.indentation.enable=true
+-Xmx1024m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:C:\work\sts-4.19.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.48.0.202308011907\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=C:/work/sprsou/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1704451334173
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.176
+!MESSAGE Boot project ADDED: sprweb9miniboard
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:14.177
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-01-05 19:42:14.220
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 23476
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.472
+!MESSAGE Classpath changed for project: sprweb08mybatis_db2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.473
+!MESSAGE Classpath changed for project: sprweb10jikwon_gogek
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.475
+!MESSAGE Classpath changed for project: sprweb11ajax
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.476
+!MESSAGE Classpath changed for project: sprweb12ajax_sangpum
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.477
+!MESSAGE Classpath changed for project: sprweb13ajax_buser
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.479
+!MESSAGE Classpath changed for project: sprweb14aop
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.480
+!MESSAGE Classpath changed for project: sprweb15aop_login
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.482
+!MESSAGE Classpath changed for project: sprweb16fileupload
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.483
+!MESSAGE Classpath changed for project: sprweb17jpa
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.484
+!MESSAGE Classpath changed for project: sprweb18_jpa2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.486
+!MESSAGE Classpath changed for project: sprweb4th
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.487
+!MESSAGE Classpath changed for project: sprweb5
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.488
+!MESSAGE Classpath changed for project: sprweb6params
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.490
+!MESSAGE Classpath changed for project: sprweb7legacy_db
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.491
+!MESSAGE Classpath changed for project: sprweb8mybatis_db
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.493
+!MESSAGE Classpath changed for project: sprweb8mybatis_ex
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 19:42:15.494
+!MESSAGE Classpath changed for project: sprweb9miniboard
+
+!ENTRY Activator 4 0 2024-01-05 19:42:22.953
+!MESSAGE HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+!STACK 0
+java.lang.RuntimeException: com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at com.github.dockerjava.zerodep.ApacheDockerHttpClientImpl.execute(ApacheDockerHttpClientImpl.java:187)
+	at com.github.dockerjava.zerodep.ZerodepDockerHttpClient.execute(ZerodepDockerHttpClient.java:8)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:228)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.get(DefaultInvocationBuilder.java:202)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.get(DefaultInvocationBuilder.java:74)
+	at com.github.dockerjava.core.exec.InfoCmdExec.exec(InfoCmdExec.java:24)
+	at com.github.dockerjava.core.exec.InfoCmdExec.exec(InfoCmdExec.java:14)
+	at com.github.dockerjava.core.command.AbstrDockerCmd.exec(AbstrDockerCmd.java:35)
+	at org.springframework.ide.eclipse.boot.dash.docker.runtarget.DockerRunTarget.connect(DockerRunTarget.java:130)
+	at org.springframework.ide.eclipse.boot.dash.cloudfoundry.RemoteBootDashModel.lambda$2(RemoteBootDashModel.java:77)
+	at org.springframework.ide.eclipse.boot.dash.model.remote.RefreshStateTracker.call(RefreshStateTracker.java:80)
+	at org.springframework.ide.eclipse.boot.dash.model.remote.RefreshStateTracker.lambda$3(RefreshStateTracker.java:123)
+	at org.springsource.ide.eclipse.commons.frameworks.core.util.JobUtil$6.run(JobUtil.java:193)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.socket.PlainConnectionSocketFactory$1.run(PlainConnectionSocketFactory.java:87)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:84)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:148)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:409)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:135)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:172)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:93)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:128)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:178)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:67)
+	at com.github.dockerjava.zerodep.ApacheDockerHttpClientImpl.execute(ApacheDockerHttpClientImpl.java:183)
+	... 13 more
+
+!ENTRY Activator 4 0 2024-01-05 19:42:22.956
+!MESSAGE HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+!STACK 0
+java.lang.RuntimeException: com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at com.github.dockerjava.zerodep.ApacheDockerHttpClientImpl.execute(ApacheDockerHttpClientImpl.java:187)
+	at com.github.dockerjava.zerodep.ZerodepDockerHttpClient.execute(ZerodepDockerHttpClient.java:8)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:228)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.get(DefaultInvocationBuilder.java:202)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.get(DefaultInvocationBuilder.java:74)
+	at com.github.dockerjava.core.exec.InfoCmdExec.exec(InfoCmdExec.java:24)
+	at com.github.dockerjava.core.exec.InfoCmdExec.exec(InfoCmdExec.java:14)
+	at com.github.dockerjava.core.command.AbstrDockerCmd.exec(AbstrDockerCmd.java:35)
+	at org.springframework.ide.eclipse.boot.dash.docker.runtarget.DockerRunTarget.connect(DockerRunTarget.java:130)
+	at org.springframework.ide.eclipse.boot.dash.cloudfoundry.RemoteBootDashModel.lambda$2(RemoteBootDashModel.java:77)
+	at org.springframework.ide.eclipse.boot.dash.model.remote.RefreshStateTracker.call(RefreshStateTracker.java:80)
+	at org.springframework.ide.eclipse.boot.dash.model.remote.RefreshStateTracker.lambda$3(RefreshStateTracker.java:123)
+	at org.springsource.ide.eclipse.commons.frameworks.core.util.JobUtil$6.run(JobUtil.java:193)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.socket.PlainConnectionSocketFactory$1.run(PlainConnectionSocketFactory.java:87)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:84)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:148)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:409)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:135)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:172)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:93)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:128)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:178)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:67)
+	at com.github.dockerjava.zerodep.ApacheDockerHttpClientImpl.execute(ApacheDockerHttpClientImpl.java:183)
+	... 13 more
+!SESSION 2024-01-05 20:54:37.084 -----------------------------------------------
+eclipse.buildId=4.19.1.202308011926
+java.version=17.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-01-05 20:54:39.291
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.e4.ui.css.swt.theme 4 0 2024-01-05 20:54:45.388
+!MESSAGE /css/gef_dark.css
+!STACK 0
+java.io.FileNotFoundException: /css/gef_dark.css
+	at org.eclipse.osgi.storage.url.bundleentry.Handler.findBundleEntry(Handler.java:55)
+	at org.eclipse.osgi.storage.url.BundleResourceHandler.openConnection(BundleResourceHandler.java:182)
+	at java.base/java.net.URL.openConnection(URL.java:1094)
+	at org.eclipse.osgi.storage.url.BundleURLConverter.resolve(BundleURLConverter.java:55)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.core.internal.runtime.PlatformURLConverter.resolve(PlatformURLConverter.java:53)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:288)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:468)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:436)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.setTheme(ThemeEngine.java:428)
+	at org.eclipse.e4.ui.css.swt.internal.theme.ThemeEngine.restore(ThemeEngine.java:624)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.setCSSTheme(PartRenderingEngine.java:1417)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.initializeStyling(PartRenderingEngine.java:1324)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1050)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.jface 2 0 2024-01-05 20:54:46.081
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-01-05 20:54:46.081
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-01-05 20:54:48.195
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\LG'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:49.948
+!MESSAGE Boot project ADDED: spr1
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:49.965
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:50.043
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-01-05 20:54:50.080
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\work\sts-4.19.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre\bin\javaw.exe
+-cp
+C:\work\sts-4.19.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.48.0.202308011907\servers\spring-boot-language-server\BOOT-INF\classes;C:\work\sts-4.19.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.48.0.202308011907\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Dlsp.completions.indentation.enable=true
+-Xmx1024m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:C:\work\sts-4.19.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.48.0.202308011907\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=C:/work/sprsou/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1704455690078
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:50.082
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-01-05 20:54:50.133
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 14652
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.427
+!MESSAGE Boot project ADDED: spr10aop_anno
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.429
+!MESSAGE Boot project ADDED: spr11aop_ex
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.432
+!MESSAGE Boot project ADDED: spr12db_legacy
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.434
+!MESSAGE Boot project ADDED: spr13_daosupport
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.437
+!MESSAGE Boot project ADDED: spr14mybatis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.439
+!MESSAGE Boot project ADDED: spr15mybatis_ex
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.441
+!MESSAGE Boot project ADDED: spr2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.443
+!MESSAGE Boot project ADDED: spr3
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.446
+!MESSAGE Boot project ADDED: spr4setter
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.448
+!MESSAGE Boot project ADDED: spr5setter
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.450
+!MESSAGE Boot project ADDED: spr6arrange
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.452
+!MESSAGE Boot project ADDED: spr7annotation
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.454
+!MESSAGE Boot project ADDED: spr8bank
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.455
+!MESSAGE Boot project ADDED: spr9aop_basic
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.457
+!MESSAGE Boot project ADDED: sprweb08mybatis_db2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.460
+!MESSAGE Boot project ADDED: sprweb10jikwon_gogek
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.463
+!MESSAGE Boot project ADDED: sprweb11ajax
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.467
+!MESSAGE Boot project ADDED: sprweb12ajax_sangpum
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.470
+!MESSAGE Boot project ADDED: sprweb13ajax_buser
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.473
+!MESSAGE Boot project ADDED: sprweb14aop
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.476
+!MESSAGE Boot project ADDED: sprweb15aop_login
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.479
+!MESSAGE Boot project ADDED: sprweb16fileupload
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.482
+!MESSAGE Boot project ADDED: sprweb17jpa
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.485
+!MESSAGE Boot project ADDED: sprweb18_jpa2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.488
+!MESSAGE Boot project ADDED: sprweb2
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.491
+!MESSAGE Boot project ADDED: sprweb3
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.493
+!MESSAGE Boot project ADDED: sprweb3ex
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.496
+!MESSAGE Boot project ADDED: sprweb4th
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.499
+!MESSAGE Boot project ADDED: sprweb5
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.501
+!MESSAGE Boot project ADDED: sprweb6params
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.504
+!MESSAGE Boot project ADDED: sprweb7legacy_db
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.506
+!MESSAGE Boot project ADDED: sprweb8mybatis_db
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.508
+!MESSAGE Boot project ADDED: sprweb8mybatis_ex
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:54:51.512
+!MESSAGE Boot project ADDED: sprweb9miniboard
+
+!ENTRY Activator 4 0 2024-01-05 20:54:57.192
+!MESSAGE HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+!STACK 0
+java.lang.RuntimeException: com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at com.github.dockerjava.zerodep.ApacheDockerHttpClientImpl.execute(ApacheDockerHttpClientImpl.java:187)
+	at com.github.dockerjava.zerodep.ZerodepDockerHttpClient.execute(ZerodepDockerHttpClient.java:8)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:228)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.get(DefaultInvocationBuilder.java:202)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.get(DefaultInvocationBuilder.java:74)
+	at com.github.dockerjava.core.exec.InfoCmdExec.exec(InfoCmdExec.java:24)
+	at com.github.dockerjava.core.exec.InfoCmdExec.exec(InfoCmdExec.java:14)
+	at com.github.dockerjava.core.command.AbstrDockerCmd.exec(AbstrDockerCmd.java:35)
+	at org.springframework.ide.eclipse.boot.dash.docker.runtarget.DockerRunTarget.connect(DockerRunTarget.java:130)
+	at org.springframework.ide.eclipse.boot.dash.cloudfoundry.RemoteBootDashModel.lambda$2(RemoteBootDashModel.java:77)
+	at org.springframework.ide.eclipse.boot.dash.model.remote.RefreshStateTracker.call(RefreshStateTracker.java:80)
+	at org.springframework.ide.eclipse.boot.dash.model.remote.RefreshStateTracker.lambda$3(RefreshStateTracker.java:123)
+	at org.springsource.ide.eclipse.commons.frameworks.core.util.JobUtil$6.run(JobUtil.java:193)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.socket.PlainConnectionSocketFactory$1.run(PlainConnectionSocketFactory.java:87)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:84)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:148)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:409)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:135)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:172)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:93)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:128)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:178)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:67)
+	at com.github.dockerjava.zerodep.ApacheDockerHttpClientImpl.execute(ApacheDockerHttpClientImpl.java:183)
+	... 13 more
+
+!ENTRY Activator 4 0 2024-01-05 20:54:57.199
+!MESSAGE HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+!STACK 0
+java.lang.RuntimeException: com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at com.github.dockerjava.zerodep.ApacheDockerHttpClientImpl.execute(ApacheDockerHttpClientImpl.java:187)
+	at com.github.dockerjava.zerodep.ZerodepDockerHttpClient.execute(ZerodepDockerHttpClient.java:8)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.execute(DefaultInvocationBuilder.java:228)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.get(DefaultInvocationBuilder.java:202)
+	at com.github.dockerjava.core.DefaultInvocationBuilder.get(DefaultInvocationBuilder.java:74)
+	at com.github.dockerjava.core.exec.InfoCmdExec.exec(InfoCmdExec.java:24)
+	at com.github.dockerjava.core.exec.InfoCmdExec.exec(InfoCmdExec.java:14)
+	at com.github.dockerjava.core.command.AbstrDockerCmd.exec(AbstrDockerCmd.java:35)
+	at org.springframework.ide.eclipse.boot.dash.docker.runtarget.DockerRunTarget.connect(DockerRunTarget.java:130)
+	at org.springframework.ide.eclipse.boot.dash.cloudfoundry.RemoteBootDashModel.lambda$2(RemoteBootDashModel.java:77)
+	at org.springframework.ide.eclipse.boot.dash.model.remote.RefreshStateTracker.call(RefreshStateTracker.java:80)
+	at org.springframework.ide.eclipse.boot.dash.model.remote.RefreshStateTracker.lambda$3(RefreshStateTracker.java:123)
+	at org.springsource.ide.eclipse.commons.frameworks.core.util.JobUtil$6.run(JobUtil.java:193)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.socket.PlainConnectionSocketFactory$1.run(PlainConnectionSocketFactory.java:87)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:84)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:148)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:409)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:135)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:172)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:93)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:128)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:178)
+	at com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:67)
+	at com.github.dockerjava.zerodep.ApacheDockerHttpClientImpl.execute(ApacheDockerHttpClientImpl.java:183)
+	... 13 more
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:59:51.407
+!MESSAGE Classpath changed for project: Project
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 20:59:53.049
+!MESSAGE Classpath changed for project: Project
+
+!ENTRY org.eclipse.egit.core 4 0 2024-01-05 20:59:59.314
+!MESSAGE Git team provider configuration has gone missing.
+!STACK 0
+java.nio.file.NoSuchFileException: C:\work\sprsou\.metadata\.plugins\org.eclipse.core.resources\.projects\shopproject\org.eclipse.egit.core\GitProjectData.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at org.eclipse.egit.core.project.GitProjectData.load(GitProjectData.java:647)
+	at org.eclipse.egit.core.project.GitProjectData.get(GitProjectData.java:217)
+	at org.eclipse.egit.core.project.RepositoryMapping.getProjectData(RepositoryMapping.java:335)
+	at org.eclipse.egit.core.project.RepositoryMapping.findMapping(RepositoryMapping.java:356)
+	at org.eclipse.egit.core.project.RepositoryMapping.getMapping(RepositoryMapping.java:296)
+	at org.eclipse.egit.core.internal.util.ResourceUtil.getRepository(ResourceUtil.java:708)
+	at org.eclipse.egit.core.internal.info.GitItemStateFactory.getIndexDiffDataOrNull(GitItemStateFactory.java:106)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorateResource(GitLightweightDecorator.java:194)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorate(GitLightweightDecorator.java:172)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:253)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.queue(DecorationScheduler.java:419)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:397)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.core 4 0 2024-01-05 21:00:03.953
+!MESSAGE Git team provider configuration has gone missing.
+!STACK 0
+java.nio.file.NoSuchFileException: C:\work\sprsou\.metadata\.plugins\org.eclipse.core.resources\.projects\shopproject\org.eclipse.egit.core\GitProjectData.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at org.eclipse.egit.core.project.GitProjectData.load(GitProjectData.java:647)
+	at org.eclipse.egit.core.project.GitProjectData.get(GitProjectData.java:217)
+	at org.eclipse.egit.core.GitProvider.getData(GitProvider.java:108)
+	at org.eclipse.egit.core.project.RepositoryMapping.getProjectData(RepositoryMapping.java:340)
+	at org.eclipse.egit.core.project.RepositoryMapping.findMapping(RepositoryMapping.java:356)
+	at org.eclipse.egit.core.project.RepositoryMapping.getMapping(RepositoryMapping.java:296)
+	at org.eclipse.egit.core.internal.util.ResourceUtil.getRepository(ResourceUtil.java:708)
+	at org.eclipse.egit.core.internal.info.GitItemStateFactory.getIndexDiffDataOrNull(GitItemStateFactory.java:106)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorateResource(GitLightweightDecorator.java:194)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorate(GitLightweightDecorator.java:172)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:253)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.queue(DecorationScheduler.java:419)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:397)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.launching 4 4 2024-01-05 21:00:55.649
+!MESSAGE Referenced classpath provider does not exist: org.eclipse.buildship.core.classpathprovider
+!STACK 1
+org.eclipse.core.runtime.CoreException: Referenced classpath provider does not exist: org.eclipse.buildship.core.classpathprovider
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1856)
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1841)
+	at org.eclipse.jdt.launching.JavaRuntime.getClasspathProvider(JavaRuntime.java:1170)
+	at org.eclipse.jdt.launching.JavaRuntime.computeUnresolvedRuntimeClasspath(JavaRuntime.java:1644)
+	at org.eclipse.jdt.launching.JavaRuntime.getModuleCLIOptions(JavaRuntime.java:3476)
+	at org.eclipse.jdt.launching.AbstractJavaLaunchConfigurationDelegate.getModuleCLIOptions(AbstractJavaLaunchConfigurationDelegate.java:1153)
+	at org.eclipse.jdt.launching.JavaLaunchDelegate.getVMRunnerConfiguration(JavaLaunchDelegate.java:139)
+	at org.eclipse.jdt.launching.JavaLaunchDelegate.launch(JavaLaunchDelegate.java:160)
+	at org.springframework.ide.eclipse.boot.launch.AbstractBootLaunchConfigurationDelegate.launch(AbstractBootLaunchConfigurationDelegate.java:372)
+	at org.springframework.ide.eclipse.boot.launch.BootLaunchConfigurationDelegate.launch(BootLaunchConfigurationDelegate.java:164)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:806)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:717)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1040)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1243)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 150 2024-01-05 21:00:55.650
+!MESSAGE Referenced classpath provider does not exist: org.eclipse.buildship.core.classpathprovider
+
+!ENTRY org.eclipse.egit.core 4 0 2024-01-05 21:05:11.811
+!MESSAGE Git team provider configuration has gone missing.
+!STACK 0
+java.nio.file.NoSuchFileException: C:\work\sprsou\.metadata\.plugins\org.eclipse.core.resources\.projects\shopproject\org.eclipse.egit.core\GitProjectData.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at org.eclipse.egit.core.project.GitProjectData.load(GitProjectData.java:647)
+	at org.eclipse.egit.core.project.GitProjectData.get(GitProjectData.java:217)
+	at org.eclipse.egit.core.GitProvider.getData(GitProvider.java:108)
+	at org.eclipse.egit.core.project.RepositoryMapping.getProjectData(RepositoryMapping.java:340)
+	at org.eclipse.egit.core.project.RepositoryMapping.findMapping(RepositoryMapping.java:356)
+	at org.eclipse.egit.core.project.RepositoryMapping.getMapping(RepositoryMapping.java:296)
+	at org.eclipse.egit.core.internal.util.ResourceUtil.getRepository(ResourceUtil.java:708)
+	at org.eclipse.egit.ui.internal.selection.SelectionUtils.getRepository(SelectionUtils.java:437)
+	at org.eclipse.egit.ui.internal.selection.SelectionUtils.getRepository(SelectionUtils.java:70)
+	at org.eclipse.egit.ui.internal.selection.RepositorySourceProvider.selectionChanged(RepositorySourceProvider.java:89)
+	at org.eclipse.ui.internal.e4.compatibility.SelectionService.notifyListeners(SelectionService.java:266)
+	at org.eclipse.ui.internal.e4.compatibility.SelectionService.handleSelectionChanged(SelectionService.java:98)
+	at org.eclipse.ui.internal.e4.compatibility.SelectionService.lambda$0(SelectionService.java:72)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator$1.run(SelectionAggregator.java:123)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator.notifyListeners(SelectionAggregator.java:120)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator$5.lambda$0(SelectionAggregator.java:220)
+	at org.eclipse.e4.core.contexts.RunAndTrack.runExternalCode(RunAndTrack.java:59)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator$5.changed(SelectionAggregator.java:220)
+	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:105)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.processScheduled(EclipseContext.java:358)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.set(EclipseContext.java:374)
+	at org.eclipse.e4.ui.internal.workbench.SelectionServiceImpl.setSelection(SelectionServiceImpl.java:34)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.selectionChanged(CompatibilityPart.java:471)
+	at org.eclipse.jface.viewers.Viewer$1.run(Viewer.java:151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.Viewer.fireSelectionChanged(Viewer.java:148)
+	at org.eclipse.jface.viewers.StructuredViewer.updateSelection(StructuredViewer.java:2128)
+	at org.eclipse.jface.viewers.StructuredViewer.handleSelect(StructuredViewer.java:1176)
+	at org.eclipse.jface.viewers.StructuredViewer$4.widgetSelected(StructuredViewer.java:1205)
+	at org.eclipse.jface.util.OpenStrategy.fireSelectionEvent(OpenStrategy.java:263)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:421)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4274)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4072)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3660)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.egit.core 4 0 2024-01-05 21:05:11.959
+!MESSAGE Git team provider configuration has gone missing.
+!STACK 0
+java.nio.file.NoSuchFileException: C:\work\sprsou\.metadata\.plugins\org.eclipse.core.resources\.projects\shopproject\org.eclipse.egit.core\GitProjectData.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at org.eclipse.egit.core.project.GitProjectData.load(GitProjectData.java:647)
+	at org.eclipse.egit.core.project.GitProjectData.get(GitProjectData.java:217)
+	at org.eclipse.egit.core.GitProvider.getData(GitProvider.java:108)
+	at org.eclipse.egit.core.project.RepositoryMapping.getProjectData(RepositoryMapping.java:340)
+	at org.eclipse.egit.core.project.RepositoryMapping.findMapping(RepositoryMapping.java:356)
+	at org.eclipse.egit.core.project.RepositoryMapping.getMapping(RepositoryMapping.java:296)
+	at org.eclipse.egit.core.internal.util.ResourceUtil.getRepository(ResourceUtil.java:708)
+	at org.eclipse.egit.core.internal.info.GitItemStateFactory.getIndexDiffDataOrNull(GitItemStateFactory.java:106)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorateResource(GitLightweightDecorator.java:194)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorate(GitLightweightDecorator.java:172)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:253)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.queue(DecorationScheduler.java:419)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:397)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:15.903
+!MESSAGE Classpath changed for project: Project
+
+!ENTRY org.eclipse.egit.core 4 0 2024-01-05 21:05:16.617
+!MESSAGE Git team provider configuration has gone missing.
+!STACK 0
+java.nio.file.NoSuchFileException: C:\work\sprsou\.metadata\.plugins\org.eclipse.core.resources\.projects\shopproject\org.eclipse.egit.core\GitProjectData.properties
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:422)
+	at java.base/java.nio.file.Files.newInputStream(Files.java:160)
+	at org.eclipse.egit.core.project.GitProjectData.load(GitProjectData.java:647)
+	at org.eclipse.egit.core.project.GitProjectData.get(GitProjectData.java:217)
+	at org.eclipse.egit.core.GitProvider.getData(GitProvider.java:108)
+	at org.eclipse.egit.core.project.RepositoryMapping.getProjectData(RepositoryMapping.java:340)
+	at org.eclipse.egit.core.project.RepositoryMapping.findMapping(RepositoryMapping.java:356)
+	at org.eclipse.egit.core.project.RepositoryMapping.getMapping(RepositoryMapping.java:296)
+	at org.eclipse.egit.core.internal.util.ResourceUtil.getRepository(ResourceUtil.java:708)
+	at org.eclipse.egit.core.internal.info.GitItemStateFactory.getIndexDiffDataOrNull(GitItemStateFactory.java:106)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorateResource(GitLightweightDecorator.java:194)
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorate(GitLightweightDecorator.java:172)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:253)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.queue(DecorationScheduler.java:419)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:397)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.427
+!MESSAGE Classpath changed for project: sprweb10jikwon_gogek
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.664
+!MESSAGE Classpath changed for project: sprweb11ajax
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.673
+!MESSAGE Classpath changed for project: sprweb12ajax_sangpum
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.702
+!MESSAGE Classpath changed for project: sprweb13ajax_buser
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.708
+!MESSAGE Classpath changed for project: sprweb14aop
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.715
+!MESSAGE Classpath changed for project: sprweb15aop_login
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.723
+!MESSAGE Classpath changed for project: sprweb16fileupload
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.727
+!MESSAGE Classpath changed for project: sprweb17jpa
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.820
+!MESSAGE Classpath changed for project: sprweb4th
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.827
+!MESSAGE Classpath changed for project: sprweb5
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.835
+!MESSAGE Classpath changed for project: sprweb6params
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.843
+!MESSAGE Classpath changed for project: sprweb7legacy_db
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.849
+!MESSAGE Classpath changed for project: sprweb8mybatis_db
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.858
+!MESSAGE Classpath changed for project: sprweb8mybatis_ex
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.860
+!MESSAGE Classpath changed for project: sprweb9miniboard
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.864
+!MESSAGE Classpath changed for project: Project
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:17.866
+!MESSAGE Boot project ADDED: Project
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-05 21:05:18.147
+!MESSAGE Classpath changed for project: Project

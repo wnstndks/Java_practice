@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>상품 목록</title>
+	</script>
+</head>
+
+<body>
+	<table border="1" align="center">
+		<tr>
+			<th>상품리스트</th>
+		<tr>
+			<th>상품이미지</th>
+			<th>이름</th>
+			<th>가격</th>
+			<th>남은재고</th>
+		</tr>
+		</tr>
+		<tr th:each="data : ${datas}">
+			<td> <img th:src="@{upload/}+${data.pimage}" /> </td>
+			<td th:text="${data.name}"></td>
+			<td th:text="${data.price}"> $</td>
+			<td th:text="${data.stock}"></td>
+			<td>
+				<a th:href="@{/addOrder(product_id=${data.product_id})}" alt="Output Image">
+					<input type="button" value="구매하기">
+				</a>
+				<form class="d-flex" th:action="@{/user/cart/{id}/{itemId}(id=${user.id}, itemId=${item.id})}" method="post">
+                    <div class="d-flex">
+                    <input class="form-control text-center me-3" id="amount" name="amount" type="num" value="1"
+                               style="max-width: 3rem"/>
+                        <button class="btn btn-outline-dark flex-shrink-0" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            장바구니
+                        </button>
+                    </div>
+                </form>
+				<a th:href="@{'/addJjim?product_id=' + ${data.product_id}}">
+					<input type="button" value="찜하기">
+				</a>
+			</td>
+		</tr>
+	</table>
+	<table align="center">
+		<td>
+			<a th:href="orderlist"> <input type="button" value="주문내역보기"></a>
+		</td>
+		<td>
+			<a th:href="cartlist"> <input type="button" value="장바구니목록"></a>
+		</td>
+		<td>
+			<a th:href="jjimlist"> <input type="button" value="찜목록"></a>
+		</td>
+	</table>
+</body>
+
+</html>

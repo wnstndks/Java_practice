@@ -1,0 +1,15 @@
+package pack.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.stereotype.Repository;
+
+import pack.model.Order;
+
+@Repository
+@EnableJpaRepositories
+public interface OrderRepository extends JpaRepository<Order, Integer> {
+	 List<Order> findAllByOrderByOrder_idDesc();
+}

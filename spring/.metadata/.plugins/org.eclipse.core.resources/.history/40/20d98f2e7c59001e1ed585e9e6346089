@@ -1,0 +1,50 @@
+package pack.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+import pack.model.Order;
+import pack.repository.OrderRepository;
+
+@Service
+@RequiredArgsConstructor
+public class OrderService {
+	private Logger logger=LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	private OrderRepository repository;
+	
+	// 전체 자료 읽기
+	public List<Order> getDataAll(){
+		List<Order> orderlist=repository.findAll();
+		logger.info("orders "+ orderlist.size());
+		return orderlist;
+	}
+	
+	
+    private OrderRepository orderRepository;
+
+    public void saveOrderToDatabase(String name, String color,String capacity,int quantity, int total) {
+        Order order = new Order();
+        order.setName(name);
+        order.setColor(color);
+        order.setCapacity(capacity);
+        order.setQuantity(quantity);
+        order.setTotal(total);
+
+        orderRepository.save(order);
+    }
+
+ // 취소
+    public void cancelOrder(Integer order_id) {
+        // 엔티티 조회
+        Order order = orderRepository.findById(order_id);
+        // 주문 취소
+        order.cancel();
+    }
+}

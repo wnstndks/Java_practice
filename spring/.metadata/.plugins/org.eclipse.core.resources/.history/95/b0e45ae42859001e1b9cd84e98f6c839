@@ -1,0 +1,58 @@
+package pack.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import pack.model.Order;
+import pack.model.Product;
+import pack.repository.OrderRepository;
+import pack.repository.ProductRepository;
+import pack.service.OrderService;
+import pack.service.ProductService;
+
+@Controller
+public class OrderController {
+
+	@Autowired
+	private ProductRepository productRepository;
+	
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	@Autowired
+	Product product;
+	
+	@Autowired
+	private OrderService orderservice;
+	
+	@GetMapping("addOrder")
+	public String insertOrder(@RequestParam("product_id") Integer product_id) {
+	    
+	    if(product_id !=null){
+	        Order order = new Order();
+	        order.setName(product.getName());
+	        order.setColor(product.getColor());
+	        order.setCapacity(product.getCapacity());
+	        order.setQuantity(1); // 기본값 설정
+	        order.setTotal(product.getPrice());  // 기본값 설정
+
+	        orderRepository.save(order);
+	    }
+	    
+	    return "redirect:http://localhost/list";
+	}
+	
+	@GetMapping("orderlist")
+	public String listProcess(Model model) {
+		ArrayList<Order> orderlist = (ArrayList<Order>) orderservice.getDataAll(); // jpa를 이용해 자료를 읽게 한 것
+
+		model.addAttribute("orders", orderlist);
+
+		return "orderlist";
+	}
+}

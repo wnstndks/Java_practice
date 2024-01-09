@@ -1,0 +1,82 @@
+package pack.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import pack.model.DataProcess;
+import pack.model.ProductDto;
+
+@Controller
+public class ProductController {
+
+	@Autowired
+	private DataProcess dataProcess;
+
+	@GetMapping("list")
+	public String listProcess(Model model) {
+		ArrayList<ProductDto> list = (ArrayList<ProductDto>) dataProcess.getDataAll(); // jpa를 이용해 자료를 읽게 한 것
+
+		model.addAttribute("datas", list);
+
+		return "list";
+	}
+
+	@GetMapping("insert")
+	public String insert() {
+		return "insert";
+	}
+
+	@PostMapping("insert")
+	public String insert(ProductBean bean, Model model) {
+		String msg = dataProcess.insert(bean);
+
+		if (msg.equals("success")) {
+			// return "list";
+			return "redirect:http://localhost/list";
+		} else {
+			model.addAttribute("msg", msg);
+			return "error.html";
+		}
+	}
+
+	// 수정 준비
+	@GetMapping("update")
+	public String update(Integer num, Model model) {
+		System.out.println("num: " + num);
+		ProductDto dto = (ProductDto) dataProcess.getData(num);
+		model.addAttribute("data", dto);
+		return "update";
+	}
+
+	// 수정 처리
+	@PostMapping("update")
+	public String update(ProductBean bean, Model model) {
+		String msg = dataProcess.update(bean);
+
+		if (msg.equals("success")) {
+			return "redirect:http://localhost/list";
+		} else {
+			model.addAttribute("msg", msg);
+			return "error.html";
+		}
+	}
+
+	@GetMapping("delete")
+	public String delete(@RequestParam("product_id") int product_id, Model model) {
+		String msg = dataProcess.delete(product_id);
+
+		if (msg.equals("success")) {
+			return "redirect:http://localhost/list";
+		} else {
+			model.addAttribute("msg", msg);
+			return "error.html";
+		}
+	}
+
+}

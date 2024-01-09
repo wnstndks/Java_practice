@@ -1,0 +1,49 @@
+package pack.model;
+
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import pack.cart.Cart;
+import pack.product.Product;
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class CartProduct {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int cartproductid;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "cartid")
+	private Cart cart;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "productid")
+	private Product product;
+
+	private int cartcount; // 카트에 담긴 상품 개수
+
+	public static CartProduct createCartProduct(Cart cart, Product product, int amount) {
+		CartProduct cartProduct = new CartProduct();
+		cartProduct.setCart(cart);
+		cartProduct.setProduct(product);
+		cartProduct.setCartcount(amount);
+		return cartProduct;
+	}
+
+	// 이미 담겨있는 물건 또 담을 경우 수량 증가
+	public void addCount(int count) {
+		this.cartcount += count;
+	}
+}

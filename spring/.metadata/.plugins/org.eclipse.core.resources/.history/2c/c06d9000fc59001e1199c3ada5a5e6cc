@@ -1,0 +1,97 @@
+package pack.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+import pack.model.Jjim;
+import pack.model.Order;
+import pack.model.Product;
+import pack.repository.JjimRepository;
+import pack.repository.OrderRepository;
+import pack.repository.ProductRepository;
+
+@Service
+@RequiredArgsConstructor
+@Repository
+public class ProductService {
+	
+	private Logger logger=LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	private ProductRepository repository;
+	
+	// 전체 자료 읽기
+	public List<Product> getDataAll(){
+		List<Product> list=repository.findAll();
+		logger.info("datas "+ list.size());
+		return list;
+	}
+	
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	@Autowired
+	private JjimRepository jjimRepository;
+
+	@Autowired
+	private ProductRepository productRepository;
+
+	public boolean insertOrderFromProduct(int product_id) {
+	    try {
+	        // products 테이블로부터 데이터를 가져옵니다.
+	        Product product = productRepository.findById(product_id).orElse(null);
+
+	        if (product != null) {
+	            // orders 테이블에 데이터를 추가합니다.
+	            Order order = new Order();
+	            order.setName(product.getName());
+	            order.setPimage(product.getPimage());
+	            order.setProduct_id(product_id);
+	            
+	            // total을 계산하여 설정합니다.
+	            int total = product.getPrice() * product.getStock();
+	            order.setTotal(total);
+	            orderRepository.save(order);
+	            
+	            return true;
+	            
+	        } else {
+	            return false; // product_id에 해당하는 상품이 없는 경우
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false; // 예외 발생 시 실패
+	    }
+	}
+	
+	public boolean insertJjimFromProduct(int product_id) {
+	    try {
+	        // products 테이블로부터 데이터를 가져옵니다.
+	        Product product = productRepository.findById(product_id).orElse(null);
+
+	        if (product != null) {
+	            // orders 테이블에 데이터를 추가합니다.
+	            Jjim jjim = new Jjim();
+	            jjim.setName(product.getName());
+	            jjim.setPimage(product.getPimage());
+	            jjim.setProduct_id(product_id);
+	            
+	            jjimRepository.save(jjim);
+	            
+	            return true;
+	            
+	        } else {
+	            return false; // product_id에 해당하는 상품이 없는 경우
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false; // 예외 발생 시 실패
+	    }
+	}
+}

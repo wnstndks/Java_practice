@@ -1,0 +1,81 @@
+package pack.jjim;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+import pack.cart.Cart;
+import pack.cart.CartProduct;
+import pack.cart.CartRepository;
+import pack.product.ProductRepository;
+
+@Service
+@RequiredArgsConstructor
+@Repository
+public class JjimService {
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@Autowired
+	private ProductRepository productRepository;
+	
+	@Autowired
+	private CartRepository cartRepository;
+	
+	@Autowired
+	private JjimRepository repository;
+
+	// 전체 자료 읽기
+	public List<Jjim> getDataAll() {
+		List<Jjim> jjimlist = repository.findAll();
+		logger.info("jjims " + jjimlist.size());
+		return jjimlist;
+	}
+	
+	
+	// 장바구니에 추가하기
+	public boolean insertCartFromJjim(int product_id) {
+		try {
+			// products 테이블로부터 데이터를 가져옵니다.
+			Jjim jjim = jjimRepository.findById(product_id).orElse(null);
+
+			if (jjim != null ) {
+				CartProduct cartproduct = new CartProduct();			
+				cartproduct.set(jjim.getName());
+				cart.setPrice(jjim.getPrice());
+				cart.setPimage(jjim.getPimage());
+				cart.setProduct_id(product_id);
+				
+				cartRepository.save(cart);
+				jjimRepository.delete(jjim);
+				return true;
+
+			} else {
+				return false; // product_id에 해당하는 상품이 없는 경우
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false; // 예외 발생 시 실패
+		}
+	}
+
+	
+	//찜에서 삭제하기
+	@Autowired
+	private JjimRepository jjimRepository;
+
+	public boolean deleteProduct(int jjim_id) {
+		try {
+			jjimRepository.deleteById(jjim_id);
+			return true;
+		} catch (Exception e) {
+			// 예외 처리
+			return false;
+		}
+	}
+}

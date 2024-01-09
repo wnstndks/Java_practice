@@ -1,0 +1,49 @@
+package pack.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import pack.model.Cart;
+import pack.model.Product;
+import pack.service.CartService;
+import pack.service.ProductService;
+
+@Controller
+public class CartController {
+
+	@Autowired
+	private CartService cartService;
+
+	@Autowired
+	private ProductService productService;
+
+	// 장바구니 목록보기
+	@GetMapping("cartlist")
+	public String listProcess(Model model) {
+		ArrayList<Cart> cartlist = (ArrayList<Cart>) cartService.getDataAll(); // jpa를 이용해 자료를 읽게 한 것
+
+		model.addAttribute("carts", cartlist);
+
+		return "cartlist";
+	}
+
+	@PostMapping("/customer/cart/{id}/{productId}")
+	public String addCartItem(@PathVariable("id") Integer id, @PathVariable("itemId") Integer productId, int amount) {
+
+		User user = userPageService.findUser(id);
+		Product product = productService.itemView(productId);
+
+		cartService.addCart(user, product, amount);
+
+		return "redirect:/item/view/{itemId}";
+	}
+
+}

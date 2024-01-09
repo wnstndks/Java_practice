@@ -1,0 +1,17 @@
+package pack.repository;
+
+
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import pack.model.CartProduct;
+
+@Repository
+public interface CartProductRepository extends JpaRepository<CartProduct, Integer> {
+    CartProduct findByCartIdAndProductId(int cartId, int productId);
+    CartProduct findCartByProductId(int productid);
+    List<CartProduct> findCartProductByProductId(int id);
+}

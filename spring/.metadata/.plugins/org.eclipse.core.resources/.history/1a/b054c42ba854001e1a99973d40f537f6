@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- 기타 헤더 정보 -->
+</head>
+<body>
+<script>
+    var openModalBtn = document.getElementById("openModalBtn");
+    var closeModalBtn = document.getElementById("closeModalBtn");
+    var modal = document.getElementById("purchaseModal");
+
+    // 상품 정보 업데이트 함수
+    function updateModal(productId, productName, productCapacity, productPrice) {
+        document.getElementById("productName").textContent = productName;
+        document.getElementById("productCapacity").textContent = productCapacity;
+        document.getElementById("productPrice").textContent = productPrice;
+    }
+
+    // 모달 창 열기
+    openModalBtn.addEventListener("click", function() {
+        // 상품 정보 업데이트 (예시 상품 정보)
+        var productId = 123;
+        var productName = "상품명 예시";
+        var productCapacity = "용량 예시";
+        var productPrice = 1000;
+
+        updateModal(productId, productName, productCapacity, productPrice);
+
+        modal.style.display = "block";
+    });
+
+    // 모달 창 닫기
+    closeModalBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    // 상품 구매 처리
+    function purchaseProduct() {
+        var quantity = document.getElementById("quantity").value;
+        // 수량을 서버로 전송하거나 다른 작업을 수행할 수 있음
+        alert("구매 처리됨. 수량: " + quantity);
+        modal.style.display = "none";
+    }
+</script>
+</body>
+</html>
